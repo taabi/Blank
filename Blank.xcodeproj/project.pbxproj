@@ -19,6 +19,12 @@
 		13B1CA0D197099D500C02F2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B1C9F5197099D500C02F2A /* UIKit.framework */; };
 		13B1CA15197099D500C02F2A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 13B1CA13197099D500C02F2A /* InfoPlist.strings */; };
 		13B1CA17197099D500C02F2A /* BlankTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B1CA16197099D500C02F2A /* BlankTests.m */; };
+		13B1CA2319709A6200C02F2A /* welcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B1CA2119709A6200C02F2A /* welcomeViewController.m */; };
+		13B1CA2419709A6200C02F2A /* welcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B1CA2219709A6200C02F2A /* welcomeViewController.xib */; };
+		13B1CA2819709A7E00C02F2A /* topicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B1CA2619709A7E00C02F2A /* topicViewController.m */; };
+		13B1CA2919709A7E00C02F2A /* topicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B1CA2719709A7E00C02F2A /* topicViewController.xib */; };
+		13B1CA2D19709A9700C02F2A /* feedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B1CA2B19709A9700C02F2A /* feedViewController.m */; };
+		13B1CA2E19709A9700C02F2A /* feedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B1CA2C19709A9700C02F2A /* feedViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,15 @@
 		13B1CA12197099D500C02F2A /* BlankTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BlankTests-Info.plist"; sourceTree = "<group>"; };
 		13B1CA14197099D500C02F2A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		13B1CA16197099D500C02F2A /* BlankTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlankTests.m; sourceTree = "<group>"; };
+		13B1CA2019709A6200C02F2A /* welcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = welcomeViewController.h; sourceTree = "<group>"; };
+		13B1CA2119709A6200C02F2A /* welcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = welcomeViewController.m; sourceTree = "<group>"; };
+		13B1CA2219709A6200C02F2A /* welcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = welcomeViewController.xib; sourceTree = "<group>"; };
+		13B1CA2519709A7E00C02F2A /* topicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = topicViewController.h; sourceTree = "<group>"; };
+		13B1CA2619709A7E00C02F2A /* topicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = topicViewController.m; sourceTree = "<group>"; };
+		13B1CA2719709A7E00C02F2A /* topicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = topicViewController.xib; sourceTree = "<group>"; };
+		13B1CA2A19709A9700C02F2A /* feedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = feedViewController.h; sourceTree = "<group>"; };
+		13B1CA2B19709A9700C02F2A /* feedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = feedViewController.m; sourceTree = "<group>"; };
+		13B1CA2C19709A9700C02F2A /* feedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = feedViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +126,15 @@
 				13B1CA01197099D500C02F2A /* AppDelegate.m */,
 				13B1CA03197099D500C02F2A /* Images.xcassets */,
 				13B1C9F8197099D500C02F2A /* Supporting Files */,
+				13B1CA2019709A6200C02F2A /* welcomeViewController.h */,
+				13B1CA2119709A6200C02F2A /* welcomeViewController.m */,
+				13B1CA2219709A6200C02F2A /* welcomeViewController.xib */,
+				13B1CA2519709A7E00C02F2A /* topicViewController.h */,
+				13B1CA2619709A7E00C02F2A /* topicViewController.m */,
+				13B1CA2719709A7E00C02F2A /* topicViewController.xib */,
+				13B1CA2A19709A9700C02F2A /* feedViewController.h */,
+				13B1CA2B19709A9700C02F2A /* feedViewController.m */,
+				13B1CA2C19709A9700C02F2A /* feedViewController.xib */,
 			);
 			path = Blank;
 			sourceTree = "<group>";
@@ -219,7 +243,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13B1CA2E19709A9700C02F2A /* feedViewController.xib in Resources */,
 				13B1C9FC197099D500C02F2A /* InfoPlist.strings in Resources */,
+				13B1CA2419709A6200C02F2A /* welcomeViewController.xib in Resources */,
+				13B1CA2919709A7E00C02F2A /* topicViewController.xib in Resources */,
 				13B1CA04197099D500C02F2A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,7 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13B1CA2D19709A9700C02F2A /* feedViewController.m in Sources */,
 				13B1CA02197099D500C02F2A /* AppDelegate.m in Sources */,
+				13B1CA2319709A6200C02F2A /* welcomeViewController.m in Sources */,
+				13B1CA2819709A7E00C02F2A /* topicViewController.m in Sources */,
 				13B1C9FE197099D500C02F2A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
