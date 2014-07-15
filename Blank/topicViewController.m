@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIView *comedyView;
 @property (weak, nonatomic) IBOutlet UIView *gamingView;
 
+- (IBAction)onTopicTap:(UITapGestureRecognizer *)sender;
+
 @end
 
 @implementation topicViewController
@@ -34,30 +36,33 @@
 {
     [super viewDidLoad];
     
-    // CREATE & CONFIGURE NEWS TAP GESTURE
-    UITapGestureRecognizer *newsTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
-    [newsTapGestureRecognizer setDelegate:self];
-    [self.newsView addGestureRecognizer:newsTapGestureRecognizer];
+//    // CREATE & CONFIGURE NEWS TAP GESTURE
+//    UITapGestureRecognizer *newsTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
+//    [newsTapGestureRecognizer setDelegate:self];
+//    [self.newsView addGestureRecognizer:newsTapGestureRecognizer];
+//    
+//    // CREATE & CONFIGURE SPORTS TAP GESTURE
+//    UITapGestureRecognizer *sportsTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
+//    [sportsTapGestureRecognizer setDelegate:self];
+//    [self.sportsView addGestureRecognizer:sportsTapGestureRecognizer];
+//    
+//    // CREATE & CONFIGURE ENTERTAINMENT TAP GESTURE
+//    UITapGestureRecognizer *entertainmentTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
+//    [entertainmentTapGestureRecognizer setDelegate:self];
+//    [self.entertainmentView addGestureRecognizer:entertainmentTapGestureRecognizer];
+//    
+//    // CREATE & CONFIGURE NEWS COMEDY GESTURE
+//    UITapGestureRecognizer *comedyTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
+//    [comedyTapGestureRecognizer setDelegate:self];
+//    [self.comedyView addGestureRecognizer:comedyTapGestureRecognizer];
+//    
+//    // CREATE & CONFIGURE NEWS TAP GESTURE
+//    UITapGestureRecognizer *gamingTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
+//    [gamingTapGestureRecognizer setDelegate:self];
+//    [self.gamingView addGestureRecognizer:gamingTapGestureRecognizer];
     
-    // CREATE & CONFIGURE SPORTS TAP GESTURE
-    UITapGestureRecognizer *sportsTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
-    [sportsTapGestureRecognizer setDelegate:self];
-    [self.sportsView addGestureRecognizer:sportsTapGestureRecognizer];
     
-    // CREATE & CONFIGURE ENTERTAINMENT TAP GESTURE
-    UITapGestureRecognizer *entertainmentTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
-    [entertainmentTapGestureRecognizer setDelegate:self];
-    [self.entertainmentView addGestureRecognizer:entertainmentTapGestureRecognizer];
     
-    // CREATE & CONFIGURE NEWS COMEDY GESTURE
-    UITapGestureRecognizer *comedyTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
-    [comedyTapGestureRecognizer setDelegate:self];
-    [self.comedyView addGestureRecognizer:comedyTapGestureRecognizer];
-    
-    // CREATE & CONFIGURE NEWS TAP GESTURE
-    UITapGestureRecognizer *gamingTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
-    [gamingTapGestureRecognizer setDelegate:self];
-    [self.gamingView addGestureRecognizer:gamingTapGestureRecognizer];
     
     // EDIT VIEW DROPSHADOW HERE
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.view.bounds];
@@ -69,7 +74,7 @@
     self.view.layer.shadowPath = shadowPath.CGPath;
     
     // EDIT SEARCH BAR HERE
-    self.searchBar.layer.borderWidth = 1;
+    self.searchBar.layer.borderWidth = 0;
     self.searchBar.layer.borderColor = [[UIColor clearColor] CGColor];
     self.searchBar.backgroundColor = [UIColor blackColor];
 //    self.searchBar.barTintColor = [UIColor clearColor];
@@ -100,6 +105,57 @@
     } else {
         NSLog(@"doh!");
         self.gamingView.backgroundColor = [UIColor blueColor];
+    }
+}
+
+- (IBAction)onTopicTap:(UITapGestureRecognizer *)sender {
+    UIView *selectedTopic = sender.view;
+    NSLog(@"%d", selectedTopic.tag);
+    
+    if ( selectedTopic.tag == 0) {
+        if (self.newsView.backgroundColor == [UIColor blueColor])
+        {
+            self.newsView.backgroundColor = [UIColor whiteColor];
+        } else {
+            self.newsView.backgroundColor = [UIColor blueColor];
+        }
+    }
+    
+    if ( selectedTopic.tag == 1) {
+        if (self.sportsView.backgroundColor == [UIColor blueColor])
+        {
+        self.sportsView.backgroundColor = [UIColor whiteColor];
+        } else {
+        self.sportsView.backgroundColor = [UIColor blueColor];
+            }
+    }
+
+    if ( selectedTopic.tag == 2)
+    {
+        if(self.entertainmentView.backgroundColor == [UIColor blueColor])
+        {
+            self.entertainmentView.backgroundColor = [UIColor whiteColor];
+        } else {
+        self.entertainmentView.backgroundColor = [UIColor blueColor];
+                }
+    }
+
+    if ( selectedTopic.tag == 3) {
+        if (self.comedyView.backgroundColor == [UIColor blueColor])
+        {
+            self.comedyView.backgroundColor = [UIColor whiteColor];
+        } else {
+        self.comedyView.backgroundColor = [UIColor blueColor];
+                }
+    }
+
+    if ( selectedTopic.tag == 4) {
+        if (self.gamingView.backgroundColor == [UIColor blueColor])
+        {
+            self.gamingView.backgroundColor = [UIColor whiteColor];
+        } else {
+            self.gamingView.backgroundColor = [UIColor blueColor];
+        }
     }
 }
 

@@ -43,8 +43,11 @@
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="KGP-ke-RX8" appends="YES" id="hQE-ru-d5C"/>
+                            </connections>
                         </view>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Oz-Em-GKj" userLabel="Sports View">
+                        <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Oz-Em-GKj" userLabel="Sports View">
                             <rect key="frame" x="0.0" y="170" width="270" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -63,13 +66,16 @@
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="ElI-qN-UqX" appends="YES" id="6EY-zN-Usa"/>
+                            </connections>
                         </view>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A1l-G5-KTY" userLabel="Entertainment View">
+                        <view tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A1l-G5-KTY" userLabel="Entertainment View">
                             <rect key="frame" x="0.0" y="250" width="270" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Entertainment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a45-2w-v0u">
-                                    <rect key="frame" x="115" y="19" width="130" height="43"/>
+                                    <rect key="frame" x="113" y="19" width="130" height="43"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -83,8 +89,11 @@
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="qQ6-sq-SG1" appends="YES" id="lTX-N0-viK"/>
+                            </connections>
                         </view>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qm2-wo-Jpi" userLabel="Comedy View">
+                        <view tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qm2-wo-Jpi" userLabel="Comedy View">
                             <rect key="frame" x="0.0" y="330" width="270" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -103,8 +112,11 @@
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="4a9-JG-FhP" appends="YES" id="cGC-mt-wAS"/>
+                            </connections>
                         </view>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhK-VF-Kv8" userLabel="Gaming View">
+                        <view tag="4" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhK-VF-Kv8" userLabel="Gaming View">
                             <rect key="frame" x="0.0" y="410" width="270" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -123,19 +135,27 @@
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="8mu-3p-rEM" appends="YES" id="a8g-9k-Ff9"/>
+                            </connections>
                         </view>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MXS-ek-gaf" userLabel="Search View">
                             <rect key="frame" x="0.0" y="0.0" width="270" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search for a website" backgroundImage="search bar" translatesAutoresizingMaskIntoConstraints="NO" id="plR-qP-SkO">
+                                <searchBar contentMode="redraw" fixedFrame="YES" text="" placeholder="Search for a website" backgroundImage="search bar" translatesAutoresizingMaskIntoConstraints="NO" id="plR-qP-SkO">
                                     <rect key="frame" x="0.0" y="8" width="270" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="barTintColor" red="1" green="0.26595656913708499" blue="0.21955245109171984" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="barTintColor" red="0.92549019607843142" green="0.30980392156862746" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
+                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z1W-DO-3GP">
+                                    <rect key="frame" x="0.0" y="7" width="274" height="5"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.92549019610000005" green="0.30980392159999998" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="0.26595656913708499" blue="0.21955245109171984" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.92549019607843142" green="0.30980392156862746" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="en8-Tx-CDa">
                             <rect key="frame" x="0.0" y="60" width="270" height="31"/>
@@ -165,6 +185,31 @@
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </viewController>
+        <tapGestureRecognizer id="KGP-ke-RX8" userLabel="news tap">
+            <connections>
+                <action selector="onTopicTap:" destination="-1" id="e7t-4Z-HVk"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="ElI-qN-UqX" userLabel="sports tap">
+            <connections>
+                <action selector="onTopicTap:" destination="-1" id="zEH-74-4D9"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="qQ6-sq-SG1" userLabel="entertainment tap">
+            <connections>
+                <action selector="onTopicTap:" destination="-1" id="ag8-Ai-L1L"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="4a9-JG-FhP" userLabel="comedy tap">
+            <connections>
+                <action selector="onTopicTap:" destination="-1" id="8w5-uE-42p"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="8mu-3p-rEM" userLabel="gaming tap">
+            <connections>
+                <action selector="onTopicTap:" destination="-1" id="2HT-cp-KB8"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="search bar" width="540" height="89"/>

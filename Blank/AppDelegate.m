@@ -21,10 +21,10 @@
     // Override point for customization after application launch.
 
     UIViewController *wvc = [[welcomeViewController alloc] init];
-    self.window.rootViewController = wvc;
+//    self.window.rootViewController = wvc;
 
-//    
-//    self.window.rootViewController = [[topicViewController alloc] init];
+    
+    self.window.rootViewController = [[topicViewController alloc] init];
     
 
     self.window.backgroundColor = [UIColor whiteColor];
