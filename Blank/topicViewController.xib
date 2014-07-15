@@ -11,6 +11,7 @@
                 <outlet property="gamingView" destination="nhK-VF-Kv8" id="Vqe-Ti-wFW"/>
                 <outlet property="newsView" destination="TgX-oj-4hK" id="Sod-iZ-CCz"/>
                 <outlet property="searchBar" destination="plR-qP-SkO" id="zK6-Of-Gel"/>
+                <outlet property="selectedBarView" destination="au7-2c-Mjn" id="sZM-JY-XVn"/>
                 <outlet property="sportsView" destination="6Oz-Em-GKj" id="lYn-fg-uj6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -169,6 +170,32 @@
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="0.8501134072580645" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="au7-2c-Mjn" userLabel="selectedBar View">
+                            <rect key="frame" x="0.0" y="551" width="270" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 selected" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGt-oo-t8w">
+                                    <rect key="frame" x="17" y="20" width="127" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.072569835060137533" green="0.45187245244565222" blue="0.2240566375218811" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NhA-BG-P0t">
+                                    <rect key="frame" x="212" y="16" width="46" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" title="Done">
+                                        <color key="titleColor" red="0.58812524965973423" green="0.93733016304347827" blue="0.80737412839483591" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onDoneButton:" destination="-1" eventType="touchUpInside" id="nP8-6v-I2o"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.036114150024638705" green="0.70656419836956519" blue="0.43742234909741312" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

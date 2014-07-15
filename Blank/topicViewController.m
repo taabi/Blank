@@ -16,8 +16,10 @@
 @property (weak, nonatomic) IBOutlet UIView *entertainmentView;
 @property (weak, nonatomic) IBOutlet UIView *comedyView;
 @property (weak, nonatomic) IBOutlet UIView *gamingView;
+@property (weak, nonatomic) IBOutlet UIView *selectedBarView;
 
 - (IBAction)onTopicTap:(UITapGestureRecognizer *)sender;
+- (IBAction)onDoneButton:(UIButton *)sender;
 
 @end
 
@@ -79,6 +81,10 @@
     self.searchBar.backgroundColor = [UIColor blackColor];
 //    self.searchBar.barTintColor = [UIColor clearColor];
 //    [self.searchBar setOpaque:NO];
+    
+    
+    // SET PLACEMENT OF SELECTEDBAR TAB
+    self.selectedBarView.frame = CGRectMake(0, 600, 120, 0);
 }
 
 - (void)didReceiveMemoryWarning
@@ -111,6 +117,13 @@
 - (IBAction)onTopicTap:(UITapGestureRecognizer *)sender {
     UIView *selectedTopic = sender.view;
     NSLog(@"%d", selectedTopic.tag);
+    
+    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.selectedBarView.frame = CGRectMake(0, 488, 320, 505);
+    } completion:^(BOOL finished) {
+        
+    }];
+    
     
     if ( selectedTopic.tag == 0) {
         if (self.newsView.backgroundColor == [UIColor blueColor])
@@ -157,6 +170,10 @@
             self.gamingView.backgroundColor = [UIColor blueColor];
         }
     }
+}
+
+- (IBAction)onDoneButton:(UIButton *)sender {
+    NSLog(@"You're almost done!");
 }
 
 @end

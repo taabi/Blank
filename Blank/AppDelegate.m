@@ -12,6 +12,8 @@
 
 #import "topicViewController.h"
 
+#import "feedViewController.h"
+
 
 @implementation AppDelegate
 
@@ -24,7 +26,7 @@
 //    self.window.rootViewController = wvc;
 
     
-    self.window.rootViewController = [[topicViewController alloc] init];
+    self.window.rootViewController = [[feedViewController alloc] init];
     
 
     self.window.backgroundColor = [UIColor whiteColor];
