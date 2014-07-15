@@ -91,7 +91,7 @@
     // TAP ACTION   --- add a method 'whichTopic' to detect which topic is being tapped on or off.
 - (void)tapGestureDetected:(UITapGestureRecognizer *)recognizer {
     UIGestureRecognizerState state = [recognizer state];
-    self.newsView.backgroundColor = [UIColor yellowColor];
+//    self.newsView.backgroundColor = [UIColor yellowColor];
 
     if (state == UIGestureRecognizerStateBegan || state == UIGestureRecognizerStateChanged)
     {
