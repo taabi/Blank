@@ -19,8 +19,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    topicViewController *tvc =[[topicViewController alloc] init];
 
-    UIViewController *wvc = [[welcomeViewController alloc] init];
+    welcomeViewController *wvc = [[welcomeViewController alloc] init];
+    
+    wvc.viewManager=@[tvc];
     self.window.rootViewController = wvc;
 
 //    

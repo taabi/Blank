@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="getStarterOButton" destination="Qzh-Rc-VFc" id="Aom-7q-wew"/>
                 <outlet property="paraLabel" destination="kzN-4i-g3z" id="wmr-dv-ctj"/>
+                <outlet property="topicViewHandler" destination="HI6-H9-I8U" id="RWu-S1-kLX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="welcomeLabel" destination="R2C-TA-MCH" id="WA2-wb-KZh"/>
                 <outlet property="whiteBoxView" destination="RYA-14-hIw" id="mdG-gL-n2v"/>
@@ -27,7 +28,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Blank!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2C-TA-MCH">
-                            <rect key="frame" x="26" y="69" width="268" height="41"/>
+                            <rect key="frame" x="26" y="66" width="268" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="33"/>
                             <color key="textColor" red="0.92156869173049927" green="0.30980393290519714" blue="0.23921570181846619" alpha="1" colorSpace="deviceRGB"/>
@@ -61,6 +62,11 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HI6-H9-I8U">
+                    <rect key="frame" x="200" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
             </subviews>

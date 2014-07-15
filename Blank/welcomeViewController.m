@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIView *whiteBoxView;
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *paraLabel;
+@property (strong, nonatomic) IBOutlet UIView *topicViewHandler;
 //Variables
 //functions
 -(void) firstAnimation;
@@ -33,17 +34,21 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
     //white status bar
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:NO];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    UIViewController *sideMenu = self.viewManager[0];
+    [self.topicViewHandler addSubview:sideMenu.view];
     
     //
     self.getStarterOButton.layer.cornerRadius = 5;
     //Whitebox To animate from bottom
     self.whiteBoxView.frame = CGRectMake(0, 568, 320, 00);
+    self.welcomeLabel.center = CGPointMake(0,0);
     
     //load Animation
     [self firstAnimation];
@@ -63,13 +68,17 @@
         self.whiteBoxView.frame = CGRectMake(0, 63, 320, 505);
     } completion:^(BOOL finished) {
 
+        
+
     }];
     
     
-    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:0.5 delay:0.2  options:0 animations:^{
         NSLog(@"test");
-        self.welcomeLabel.frame = CGRectMake(self.welcomeLabel.frame.origin.x,50, self.welcomeLabel.frame.size.width, self.welcomeLabel.frame.size.height);
-    } completion:Nil];
+//        self.welcomeLabel.frame = CGRectMake(self.welcomeLabel.frame.origin.x,100, self.welcomeLabel.frame.size.width, self.welcomeLabel.frame.size.height);
+//        self.whiteBoxView.backgroundColor = [UIColor orangeColor];
+
+    } completion:nil];
 
 
     

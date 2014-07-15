@@ -10,4 +10,6 @@
 
 @interface welcomeViewController : UIViewController
 
+@property (strong,nonatomic) NSArray *viewManager;
+
 @end
