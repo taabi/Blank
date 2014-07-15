@@ -9,6 +9,7 @@
 #import "feedViewController.h"
 
 @interface feedViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *feedScrollView;
 
 @end
 
@@ -27,6 +28,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.feedScrollView.contentSize = CGSizeMake(320,1200);
+    
 }
 
 - (void)didReceiveMemoryWarning

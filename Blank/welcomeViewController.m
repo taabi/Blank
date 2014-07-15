@@ -43,7 +43,7 @@
     //
     self.getStarterOButton.layer.cornerRadius = 5;
     //Whitebox To animate from bottom
-    self.whiteBoxView.frame = CGRectMake(0, 568, 320, 00);
+    self.whiteBoxView.frame = CGRectMake(0, 568, 320, 0);
     
     //load Animation
     [self firstAnimation];
