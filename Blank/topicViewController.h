@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface topicViewController : UIViewController <UIGestureRecognizerDelegate>
+- (IBAction)onDoneButton:(UIButton *)sender;
 
 //{
 //    UISearchBar *searchBar;

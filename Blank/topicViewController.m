@@ -7,6 +7,9 @@
 //
 
 #import "topicViewController.h"
+#import "welcomeViewController.h"
+
+#define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 
 @interface topicViewController ()
 @property (weak, nonatomic) IBOutlet UIView *view;
@@ -17,13 +20,18 @@
 @property (weak, nonatomic) IBOutlet UIView *comedyView;
 @property (weak, nonatomic) IBOutlet UIView *gamingView;
 @property (weak, nonatomic) IBOutlet UIView *selectedBarView;
+@property (weak, nonatomic) IBOutlet UIView *topicView;
+
+
 
 - (IBAction)onTopicTap:(UITapGestureRecognizer *)sender;
-- (IBAction)onDoneButton:(UIButton *)sender;
+
 
 @end
 
 @implementation topicViewController
+
+NSInteger topicStates[10];
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,37 +46,15 @@
 {
     [super viewDidLoad];
     
-//    // CREATE & CONFIGURE NEWS TAP GESTURE
-//    UITapGestureRecognizer *newsTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
-//    [newsTapGestureRecognizer setDelegate:self];
-//    [self.newsView addGestureRecognizer:newsTapGestureRecognizer];
-//    
-//    // CREATE & CONFIGURE SPORTS TAP GESTURE
-//    UITapGestureRecognizer *sportsTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
-//    [sportsTapGestureRecognizer setDelegate:self];
-//    [self.sportsView addGestureRecognizer:sportsTapGestureRecognizer];
-//    
-//    // CREATE & CONFIGURE ENTERTAINMENT TAP GESTURE
-//    UITapGestureRecognizer *entertainmentTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
-//    [entertainmentTapGestureRecognizer setDelegate:self];
-//    [self.entertainmentView addGestureRecognizer:entertainmentTapGestureRecognizer];
-//    
-//    // CREATE & CONFIGURE NEWS COMEDY GESTURE
-//    UITapGestureRecognizer *comedyTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
-//    [comedyTapGestureRecognizer setDelegate:self];
-//    [self.comedyView addGestureRecognizer:comedyTapGestureRecognizer];
-//    
-//    // CREATE & CONFIGURE NEWS TAP GESTURE
-//    UITapGestureRecognizer *gamingTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
-//    [gamingTapGestureRecognizer setDelegate:self];
-//    [self.gamingView addGestureRecognizer:gamingTapGestureRecognizer];
     
-    
+    for (NSInteger i = 0; i < 10; i++){
+        topicStates[i] = 0;
+    }
     
     
     // EDIT VIEW DROPSHADOW HERE
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.view.bounds];
-//    self.view.clipsToBounds = NO;
+    self.view.clipsToBounds = NO;
     self.view.layer.masksToBounds = NO;
     self.view.layer.shadowColor = [[UIColor blackColor] CGColor];
     self.view.layer.shadowOffset = CGSizeMake(-5.0f,5.0f);
@@ -119,61 +105,77 @@
     NSLog(@"%d", selectedTopic.tag);
     
     [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.selectedBarView.frame = CGRectMake(0, 488, 320, 505);
+        self.selectedBarView.frame = CGRectMake(0, 500, 320, 505);
     } completion:^(BOOL finished) {
         
     }];
     
     
-    if ( selectedTopic.tag == 0) {
-        if (self.newsView.backgroundColor == [UIColor blueColor])
+    if (selectedTopic.tag == 0) {
+        if (topicStates[0] == 1)
         {
             self.newsView.backgroundColor = [UIColor whiteColor];
+            topicStates[0]=0;
         } else {
-            self.newsView.backgroundColor = [UIColor blueColor];
+            [self.newsView setBackgroundColor:RGBA(238, 238, 238, 1)];
+            topicStates[0]=1;
         }
     }
     
-    if ( selectedTopic.tag == 1) {
-        if (self.sportsView.backgroundColor == [UIColor blueColor])
+    if (selectedTopic.tag == 1) {
+        if (topicStates[1] == 1)
         {
         self.sportsView.backgroundColor = [UIColor whiteColor];
+            topicStates[1]=0;
         } else {
-        self.sportsView.backgroundColor = [UIColor blueColor];
+         [self.sportsView setBackgroundColor:RGBA(238, 238, 238, 1)];
+            topicStates[1]=1;
             }
     }
 
     if ( selectedTopic.tag == 2)
     {
-        if(self.entertainmentView.backgroundColor == [UIColor blueColor])
+        if(topicStates[2] == 1)
         {
             self.entertainmentView.backgroundColor = [UIColor whiteColor];
+            topicStates[2]=0;
         } else {
-        self.entertainmentView.backgroundColor = [UIColor blueColor];
+         [self.entertainmentView setBackgroundColor:RGBA(238, 238, 238, 1)];
+            topicStates[2]=1;
                 }
     }
 
     if ( selectedTopic.tag == 3) {
-        if (self.comedyView.backgroundColor == [UIColor blueColor])
+        if (topicStates[3] == 1)
         {
             self.comedyView.backgroundColor = [UIColor whiteColor];
+            topicStates[3]=0;
         } else {
-        self.comedyView.backgroundColor = [UIColor blueColor];
+        [self.comedyView setBackgroundColor:RGBA(238, 238, 238, 1)];
+            topicStates[3]=1;
                 }
     }
 
     if ( selectedTopic.tag == 4) {
-        if (self.gamingView.backgroundColor == [UIColor blueColor])
+        if (topicStates[4] == 1)
         {
             self.gamingView.backgroundColor = [UIColor whiteColor];
+            topicStates[4]=0;
         } else {
-            self.gamingView.backgroundColor = [UIColor blueColor];
+           [self.gamingView setBackgroundColor:RGBA(238, 238, 238, 1)];
+            topicStates[4]=1;
         }
     }
 }
 
 - (IBAction)onDoneButton:(UIButton *)sender {
     NSLog(@"You're almost done!");
+    
+//    welcomeViewController *tempvc =[[welcomeViewController alloc]init];
+//    
+//    [tempvc showFeedView];
+    
+
 }
 
 @end

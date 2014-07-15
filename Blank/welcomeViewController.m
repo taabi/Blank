@@ -7,6 +7,8 @@
 //
 
 #import "welcomeViewController.h"
+#import "topicViewController.h"
+#import "feedViewController.h"
 
 @interface welcomeViewController ()
 
@@ -15,12 +17,21 @@
 @property (weak, nonatomic) IBOutlet UIView *whiteBoxView;
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *paraLabel;
+@property (strong, nonatomic) IBOutlet UIView *topicViewHandler;
+@property (weak, nonatomic) IBOutlet UIView *transparentView;
+- (IBAction)startButton:(id)sender;
+- (IBAction)onMainViewTap:(id)sender;
+
 //Variables
 //functions
 -(void) firstAnimation;
-
+-(void) hideTopicView;
 @end
+
+
+
 @implementation welcomeViewController
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,20 +44,31 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 
     //white status bar
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:NO];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    //
-    self.getStarterOButton.layer.cornerRadius = 5;
-    //Whitebox To animate from bottom
-    self.whiteBoxView.frame = CGRectMake(0, 568, 320, 0);
     
-    //load Animation
+    //adding side menu
+    UIViewController *sideMenu = self.viewManager[0];
+    [self.topicViewHandler addSubview:sideMenu.view];
+ 
+    
+    //setting button radius
+    self.getStarterOButton.layer.cornerRadius = 5;
+    
+    //Views To animate from bottom
+    self.whiteBoxView.frame = CGRectMake(0, 568, 320, 00);
+    self.welcomeLabel.center = CGPointMake(160,200);
+    self.getStarterOButton.center = CGPointMake(160,550);
+
+    
+    //load Intro Animation
     [self firstAnimation];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,25 +77,99 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 -(void) firstAnimation
 {
     NSLog(@"Loading Animation");
     
-    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.whiteBoxView.frame = CGRectMake(0, 63, 320, 505);
-    } completion:^(BOOL finished) {
+    [UIView
+     animateWithDuration:0.5
+     delay:0
+     usingSpringWithDamping:0.8
+     initialSpringVelocity:1
+     options:UIViewAnimationOptionCurveEaseInOut
+     animations:^{
+                    self.whiteBoxView.frame = CGRectMake(0, 63, 320, 505);
+                    }
+     completion:nil];
+    
+    
+    [UIView
+     animateWithDuration:0.5
+     delay:0.1
+     usingSpringWithDamping:0.8
+     initialSpringVelocity:1
+     options:UIViewAnimationOptionCurveEaseInOut
+     animations:^{
+         NSLog(@"IT SHOULD RUN");
+         self.welcomeLabel.center = CGPointMake(160,86);
+         self.getStarterOButton.center = CGPointMake(160,398);
+     }
+     completion:nil];
+    
+    
+} // end of intro animation
 
+- (IBAction)startButton:(id)sender {
+    
+    // Hiding the status bar
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:NO];
+
+    // Slide in the Topic View
+    [UIView
+     animateWithDuration:0.5
+     delay:0
+     usingSpringWithDamping:0.8
+     initialSpringVelocity:1
+     options:UIViewAnimationOptionCurveEaseInOut
+     animations:^{
+                self.topicViewHandler.center = CGPointMake(210, self.topicViewHandler.center.y);
+                }
+     completion:^(BOOL finished){}];
+    
+    // Show Black background
+    self.transparentView.alpha = 0;
+    self.transparentView.frame = CGRectMake(0, 0, 320, 568);
+    [UIView animateWithDuration:.3 animations:^{
+        self.transparentView.alpha = 0.8;
+        ;
     }];
-    
-    
-    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        NSLog(@"test");
-        self.welcomeLabel.frame = CGRectMake(self.welcomeLabel.frame.origin.x,50, self.welcomeLabel.frame.size.width, self.welcomeLabel.frame.size.height);
-    } completion:Nil];
 
+}
 
+- (IBAction)onMainViewTap:(id)sender {
     
+    [self.view endEditing:YES];
+    [self hideTopicView];
+    
+}
+-(void) hideTopicView{
+    
+    [UIView
+     animateWithDuration:0.3
+     delay:0
+     usingSpringWithDamping:0.8
+     initialSpringVelocity:1
+     options:UIViewAnimationOptionCurveEaseInOut
+     animations:^{
+         self.topicViewHandler.center = CGPointMake(490, self.topicViewHandler.center.y);
+     }
+     completion:^(BOOL finished){}];
+    
+    // Hide Black background
+    self.transparentView.frame = CGRectMake(320, 0, 320, 568);
+    [UIView animateWithDuration:.3 animations:^{
+        self.transparentView.alpha = 0.0;
+        ;
+    }];
     
 }
 
+-(void) showFeedView{
+    NSLog(@"runn");
+    feedViewController *fvc =[[feedViewController alloc]init];
+    fvc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:fvc animated:YES completion:nil];
+    
+}
 @end
