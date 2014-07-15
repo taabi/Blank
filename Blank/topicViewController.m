@@ -9,6 +9,8 @@
 #import "topicViewController.h"
 #import "welcomeViewController.h"
 
+#define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
 @interface topicViewController ()
 @property (weak, nonatomic) IBOutlet UIView *view;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -21,12 +23,14 @@
 @property (weak, nonatomic) IBOutlet UIView *topicView;
 
 
+
 - (IBAction)onTopicTap:(UITapGestureRecognizer *)sender;
 
 
 @end
 
 @implementation topicViewController
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,8 +44,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
     
     
     // EDIT VIEW DROPSHADOW HERE
@@ -108,7 +110,7 @@
         {
             self.newsView.backgroundColor = [UIColor whiteColor];
         } else {
-            self.newsView.backgroundColor = [UIColor colorWithRed:238 green:238 blue:238 alpha:1];
+            [self.newsView setBackgroundColor:RGBA(238, 238, 238, 1)];
         }
     }
     
@@ -117,7 +119,7 @@
         {
         self.sportsView.backgroundColor = [UIColor whiteColor];
         } else {
-        self.sportsView.backgroundColor = [UIColor blueColor];
+         [self.sportsView setBackgroundColor:RGBA(238, 238, 238, 1)];
             }
     }
 
@@ -127,7 +129,7 @@
         {
             self.entertainmentView.backgroundColor = [UIColor whiteColor];
         } else {
-        self.entertainmentView.backgroundColor = [UIColor blueColor];
+         [self.entertainmentView setBackgroundColor:RGBA(238, 238, 238, 1)];
                 }
     }
 
@@ -136,7 +138,7 @@
         {
             self.comedyView.backgroundColor = [UIColor whiteColor];
         } else {
-        self.comedyView.backgroundColor = [UIColor blueColor];
+        [self.comedyView setBackgroundColor:RGBA(238, 238, 238, 1)];
                 }
     }
 
@@ -145,7 +147,7 @@
         {
             self.gamingView.backgroundColor = [UIColor whiteColor];
         } else {
-            self.gamingView.backgroundColor = [UIColor blueColor];
+           [self.gamingView setBackgroundColor:RGBA(238, 238, 238, 1)];
         }
     }
 }

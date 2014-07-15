@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *paraLabel;
 @property (strong, nonatomic) IBOutlet UIView *topicViewHandler;
+@property (weak, nonatomic) IBOutlet UIView *transparentView;
 - (IBAction)startButton:(id)sender;
 //Variables
 //functions
@@ -43,9 +44,17 @@
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:NO];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
+
+    
+    
+    //[self.blackViewMain setHidden:YES];
+    
     //adding side menu
     UIViewController *sideMenu = self.viewManager[0];
     [self.topicViewHandler addSubview:sideMenu.view];
+
+    
+     
     
     //setting button radius
     self.getStarterOButton.layer.cornerRadius = 5;
@@ -56,6 +65,7 @@
     
     //load Animation
     [self firstAnimation];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,12 +87,12 @@
     }];
     
     
-    [UIView animateWithDuration:0.5 delay:0.2  options:0 animations:^{
-        NSLog(@"test");
-//        self.welcomeLabel.frame = CGRectMake(self.welcomeLabel.frame.origin.x,100, self.welcomeLabel.frame.size.width, self.welcomeLabel.frame.size.height);
-//        self.whiteBoxView.backgroundColor = [UIColor orangeColor];
-
-    } completion:nil];
+//    [UIView animateWithDuration:0.5 delay:0.2  options:0 animations:^{
+//        NSLog(@"test");
+////        self.welcomeLabel.frame = CGRectMake(self.welcomeLabel.frame.origin.x,100, self.welcomeLabel.frame.size.width, self.welcomeLabel.frame.size.height);
+////        self.whiteBoxView.backgroundColor = [UIColor orangeColor];
+//
+//    } completion:nil];
 
 
     
@@ -90,9 +100,21 @@
 }
 
 - (IBAction)startButton:(id)sender {
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:NO];
+
+    
     [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.topicViewHandler.center = CGPointMake(210, self.topicViewHandler.center.y);
     } completion:nil];
+    
+    //black background
+    [UIView animateWithDuration:0 animations:^{
+        self.transparentView.frame = CGRectMake(0, 0, 320, 568);
+        self.transparentView.alpha = 0.8;
+        ;
+    }];
+
+    
     
     //[self showFeedView];
 }
