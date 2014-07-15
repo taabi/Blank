@@ -47,8 +47,12 @@
     //
     self.getStarterOButton.layer.cornerRadius = 5;
     //Whitebox To animate from bottom
+<<<<<<< HEAD
     self.whiteBoxView.frame = CGRectMake(0, 568, 320, 00);
     self.welcomeLabel.center = CGPointMake(0,0);
+=======
+    self.whiteBoxView.frame = CGRectMake(0, 568, 320, 0);
+>>>>>>> master
     
     //load Animation
     [self firstAnimation];
