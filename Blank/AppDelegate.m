@@ -21,13 +21,18 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    topicViewController *tvc =[[topicViewController alloc] init];
 
-    UIViewController *wvc = [[welcomeViewController alloc] init];
-//    self.window.rootViewController = wvc;
+    welcomeViewController *wvc = [[welcomeViewController alloc] init];
+    
+    wvc.viewManager=@[tvc];
+    self.window.rootViewController = wvc;
+
 
     
-    self.window.rootViewController = [[feedViewController alloc] init];
-    
+//    self.window.rootViewController = [[feedViewController alloc] init];
+//    
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
