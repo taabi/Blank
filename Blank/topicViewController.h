@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface topicViewController : UIViewController
+@interface topicViewController : UIViewController <UIGestureRecognizerDelegate>
+
+//{
+//    UISearchBar *searchBar;
+//}
+//
+//@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+//- (IBAction)searchDoneEditing:(id)sender;
+//- (IBAction)backgoundTap:(id)sender;
 
 @end
