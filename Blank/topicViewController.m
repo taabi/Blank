@@ -31,6 +31,7 @@
 
 @implementation topicViewController
 
+NSInteger topicStates[10];
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,6 +45,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    for (NSInteger i = 0; i < 10; i++){
+        topicStates[i] = 0;
+    }
     
     
     // EDIT VIEW DROPSHADOW HERE
@@ -105,49 +111,59 @@
     }];
     
     
-    if ( selectedTopic.tag == 0) {
-        if (self.newsView.backgroundColor == [UIColor blueColor])
+    if (selectedTopic.tag == 0) {
+        if (topicStates[0] == 1)
         {
             self.newsView.backgroundColor = [UIColor whiteColor];
+            topicStates[0]=0;
         } else {
             [self.newsView setBackgroundColor:RGBA(238, 238, 238, 1)];
+            topicStates[0]=1;
         }
     }
     
-    if ( selectedTopic.tag == 1) {
-        if (self.sportsView.backgroundColor == [UIColor blueColor])
+    if (selectedTopic.tag == 1) {
+        if (topicStates[1] == 1)
         {
         self.sportsView.backgroundColor = [UIColor whiteColor];
+            topicStates[1]=0;
         } else {
          [self.sportsView setBackgroundColor:RGBA(238, 238, 238, 1)];
+            topicStates[1]=1;
             }
     }
 
     if ( selectedTopic.tag == 2)
     {
-        if(self.entertainmentView.backgroundColor == [UIColor blueColor])
+        if(topicStates[2] == 1)
         {
             self.entertainmentView.backgroundColor = [UIColor whiteColor];
+            topicStates[2]=0;
         } else {
          [self.entertainmentView setBackgroundColor:RGBA(238, 238, 238, 1)];
+            topicStates[2]=1;
                 }
     }
 
     if ( selectedTopic.tag == 3) {
-        if (self.comedyView.backgroundColor == [UIColor blueColor])
+        if (topicStates[3] == 1)
         {
             self.comedyView.backgroundColor = [UIColor whiteColor];
+            topicStates[3]=0;
         } else {
         [self.comedyView setBackgroundColor:RGBA(238, 238, 238, 1)];
+            topicStates[3]=1;
                 }
     }
 
     if ( selectedTopic.tag == 4) {
-        if (self.gamingView.backgroundColor == [UIColor blueColor])
+        if (topicStates[4] == 1)
         {
             self.gamingView.backgroundColor = [UIColor whiteColor];
+            topicStates[4]=0;
         } else {
            [self.gamingView setBackgroundColor:RGBA(238, 238, 238, 1)];
+            topicStates[4]=1;
         }
     }
 }

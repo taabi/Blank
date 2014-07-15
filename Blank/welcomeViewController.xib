@@ -81,9 +81,18 @@
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.93725490196078431" green="0.30588235294117649" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+            <gestureRecognizers/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="Y6E-g6-B4f" appends="YES" id="3Is-RC-Ouw"/>
+            </connections>
         </view>
+        <tapGestureRecognizer id="Y6E-g6-B4f" userLabel="Main View Tap">
+            <connections>
+                <action selector="onMainViewTap:" destination="-1" id="UZH-Sd-wzu"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="WelcomeTestScreen" width="640" height="1136"/>
