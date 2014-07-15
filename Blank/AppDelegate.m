@@ -24,19 +24,15 @@
     
     topicViewController *tvc =[[topicViewController alloc] init];
 
-<<<<<<< HEAD
     welcomeViewController *wvc = [[welcomeViewController alloc] init];
     
     wvc.viewManager=@[tvc];
     self.window.rootViewController = wvc;
-=======
-    UIViewController *wvc = [[welcomeViewController alloc] init];
-//    self.window.rootViewController = wvc;
->>>>>>> master
+
 
     
-    self.window.rootViewController = [[feedViewController alloc] init];
-    
+//    self.window.rootViewController = [[feedViewController alloc] init];
+//    
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

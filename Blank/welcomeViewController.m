@@ -7,6 +7,8 @@
 //
 
 #import "welcomeViewController.h"
+#import "topicViewController.h"
+#import "feedViewController.h"
 
 @interface welcomeViewController ()
 
@@ -16,10 +18,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *paraLabel;
 @property (strong, nonatomic) IBOutlet UIView *topicViewHandler;
+- (IBAction)startButton:(id)sender;
 //Variables
 //functions
 -(void) firstAnimation;
-
 @end
 @implementation welcomeViewController
 
@@ -41,18 +43,16 @@
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:NO];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
+    //adding side menu
     UIViewController *sideMenu = self.viewManager[0];
     [self.topicViewHandler addSubview:sideMenu.view];
     
-    //
+    //setting button radius
     self.getStarterOButton.layer.cornerRadius = 5;
+    
     //Whitebox To animate from bottom
-<<<<<<< HEAD
     self.whiteBoxView.frame = CGRectMake(0, 568, 320, 00);
-    self.welcomeLabel.center = CGPointMake(0,0);
-=======
-    self.whiteBoxView.frame = CGRectMake(0, 568, 320, 0);
->>>>>>> master
+
     
     //load Animation
     [self firstAnimation];
@@ -89,4 +89,19 @@
     
 }
 
+- (IBAction)startButton:(id)sender {
+    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.topicViewHandler.center = CGPointMake(210, self.topicViewHandler.center.y);
+    } completion:nil];
+    
+    //[self showFeedView];
+}
+
+-(void) showFeedView{
+    NSLog(@"runn");
+    feedViewController *fvc =[[feedViewController alloc]init];
+    fvc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:fvc animated:YES completion:nil];
+    
+}
 @end

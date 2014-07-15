@@ -7,6 +7,7 @@
 //
 
 #import "topicViewController.h"
+#import "welcomeViewController.h"
 
 @interface topicViewController ()
 @property (weak, nonatomic) IBOutlet UIView *view;
@@ -17,9 +18,11 @@
 @property (weak, nonatomic) IBOutlet UIView *comedyView;
 @property (weak, nonatomic) IBOutlet UIView *gamingView;
 @property (weak, nonatomic) IBOutlet UIView *selectedBarView;
+@property (weak, nonatomic) IBOutlet UIView *topicView;
+
 
 - (IBAction)onTopicTap:(UITapGestureRecognizer *)sender;
-- (IBAction)onDoneButton:(UIButton *)sender;
+
 
 @end
 
@@ -38,37 +41,12 @@
 {
     [super viewDidLoad];
     
-//    // CREATE & CONFIGURE NEWS TAP GESTURE
-//    UITapGestureRecognizer *newsTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
-//    [newsTapGestureRecognizer setDelegate:self];
-//    [self.newsView addGestureRecognizer:newsTapGestureRecognizer];
-//    
-//    // CREATE & CONFIGURE SPORTS TAP GESTURE
-//    UITapGestureRecognizer *sportsTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
-//    [sportsTapGestureRecognizer setDelegate:self];
-//    [self.sportsView addGestureRecognizer:sportsTapGestureRecognizer];
-//    
-//    // CREATE & CONFIGURE ENTERTAINMENT TAP GESTURE
-//    UITapGestureRecognizer *entertainmentTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
-//    [entertainmentTapGestureRecognizer setDelegate:self];
-//    [self.entertainmentView addGestureRecognizer:entertainmentTapGestureRecognizer];
-//    
-//    // CREATE & CONFIGURE NEWS COMEDY GESTURE
-//    UITapGestureRecognizer *comedyTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
-//    [comedyTapGestureRecognizer setDelegate:self];
-//    [self.comedyView addGestureRecognizer:comedyTapGestureRecognizer];
-//    
-//    // CREATE & CONFIGURE NEWS TAP GESTURE
-//    UITapGestureRecognizer *gamingTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureDetected:)];
-//    [gamingTapGestureRecognizer setDelegate:self];
-//    [self.gamingView addGestureRecognizer:gamingTapGestureRecognizer];
-    
     
     
     
     // EDIT VIEW DROPSHADOW HERE
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.view.bounds];
-//    self.view.clipsToBounds = NO;
+    self.view.clipsToBounds = NO;
     self.view.layer.masksToBounds = NO;
     self.view.layer.shadowColor = [[UIColor blackColor] CGColor];
     self.view.layer.shadowOffset = CGSizeMake(-5.0f,5.0f);
@@ -119,7 +97,7 @@
     NSLog(@"%d", selectedTopic.tag);
     
     [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.selectedBarView.frame = CGRectMake(0, 488, 320, 505);
+        self.selectedBarView.frame = CGRectMake(0, 500, 320, 505);
     } completion:^(BOOL finished) {
         
     }];
@@ -130,7 +108,7 @@
         {
             self.newsView.backgroundColor = [UIColor whiteColor];
         } else {
-            self.newsView.backgroundColor = [UIColor blueColor];
+            self.newsView.backgroundColor = [UIColor colorWithRed:238 green:238 blue:238 alpha:1];
         }
     }
     
@@ -174,6 +152,12 @@
 
 - (IBAction)onDoneButton:(UIButton *)sender {
     NSLog(@"You're almost done!");
+    
+//    welcomeViewController *tempvc =[[welcomeViewController alloc]init];
+//    
+//    [tempvc showFeedView];
+    
+
 }
 
 @end
