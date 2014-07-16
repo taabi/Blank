@@ -59,11 +59,13 @@
     
     //setting button radius
     self.getStarterOButton.layer.cornerRadius = 5;
+    self.whiteBoxView.layer.cornerRadius = 10;
     
     //Views To animate from bottom
     self.whiteBoxView.frame = CGRectMake(0, 568, 320, 00);
     self.welcomeLabel.center = CGPointMake(160,200);
     self.getStarterOButton.center = CGPointMake(160,550);
+    self.paraLabel.center = CGPointMake(160, 580);
 
     
     //load Intro Animation
@@ -89,7 +91,7 @@
      initialSpringVelocity:1
      options:UIViewAnimationOptionCurveEaseInOut
      animations:^{
-                    self.whiteBoxView.frame = CGRectMake(0, 63, 320, 505);
+                    self.whiteBoxView.frame = CGRectMake(0, 70, 320, 505);
                     }
      completion:nil];
     
@@ -104,6 +106,7 @@
          NSLog(@"IT SHOULD RUN");
          self.welcomeLabel.center = CGPointMake(160,86);
          self.getStarterOButton.center = CGPointMake(160,398);
+         self.paraLabel.center = CGPointMake(160, 324);
      }
      completion:nil];
     
