@@ -15,12 +15,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navbar" id="UXo-19-NyU">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6mi-Oz-voc">
-                    <rect key="frame" x="0.0" y="63" width="320" height="505"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="505"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
                         <imageView contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video feed" id="98C-0o-8rN">
@@ -43,7 +39,6 @@
         </viewController>
     </objects>
     <resources>
-        <image name="navbar" width="640" height="128"/>
         <image name="video feed" width="320" height="1634"/>
     </resources>
 </document>

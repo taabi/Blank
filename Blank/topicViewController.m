@@ -171,9 +171,9 @@ NSInteger topicStates[10];
 - (IBAction)onDoneButton:(UIButton *)sender {
     NSLog(@"You're almost done!");
     
-//    welcomeViewController *tempvc =[[welcomeViewController alloc]init];
-//    
-//    [tempvc showFeedView];
+  welcomeViewController *tempvc =[[welcomeViewController alloc]init];
+   
+   [tempvc showFeedView];
     
 
 }
