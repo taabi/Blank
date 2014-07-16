@@ -10,4 +10,7 @@
 
 @interface welcomeViewController : UIViewController
 
+@property (strong,nonatomic) NSArray *viewManager;
+-(void) showFeedView;
+
 @end
