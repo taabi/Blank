@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blank/welcomeViewController.m"
-            timestampString = "427162285.98225"
+            timestampString = "427316990.13749"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "-startButton:"
             landmarkType = "5">
          </BreakpointContent>
