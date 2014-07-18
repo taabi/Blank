@@ -22,10 +22,9 @@
 @property (weak, nonatomic) IBOutlet UIView *selectedBarView;
 @property (weak, nonatomic) IBOutlet UIView *topicView;
 
-
-
 - (IBAction)onTopicTap:(UITapGestureRecognizer *)sender;
 
+- (void) topicCount;
 
 @end
 
@@ -176,6 +175,11 @@ NSInteger topicStates[10];
 //    [tempvc showFeedView];
     
 
+}
+
+- (void) topicCount {
+    NSLog(@"counting...");
+    
 }
 
 @end
