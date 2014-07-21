@@ -53,8 +53,14 @@
     
     
     //adding side menu
+//    UIViewController *sideMenu = self.viewManager[0];
+//    [self.topicViewHandler addSubview:sideMenu.view];
+//    
+    //adding side menu
     UIViewController *sideMenu = self.viewManager[0];
     [self.topicViewHandler addSubview:sideMenu.view];
+    [self addChildViewController:sideMenu];
+    [sideMenu didMoveToParentViewController:self];
  
     
     //setting button radius
