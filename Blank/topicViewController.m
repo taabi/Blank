@@ -22,11 +22,16 @@
 @property (weak, nonatomic) IBOutlet UIView *gamingView;
 @property (weak, nonatomic) IBOutlet UIView *selectedBarView;
 @property (weak, nonatomic) IBOutlet UIView *topicView;
-
+@property (weak, nonatomic) IBOutlet UILabel *countLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *newsImage;
+@property (weak, nonatomic) IBOutlet UIImageView *sportsImage;
+@property (weak, nonatomic) IBOutlet UIImageView *entertainmentImage;
+@property (weak, nonatomic) IBOutlet UIImageView *comedyImage;
+@property (weak, nonatomic) IBOutlet UIImageView *gamingImage;
 
 
 - (IBAction)onTopicTap:(UITapGestureRecognizer *)sender;
-
+- (IBAction)hideCount;
 
 @end
 
@@ -47,10 +52,96 @@ NSInteger topicStates[10];
 {
     [super viewDidLoad];
     
+    self.newsImage.animationImages = [NSArray arrayWithObjects:
+            [UIImage imageNamed:@"5A.png"],
+            [UIImage imageNamed:@"5B.png"],
+            [UIImage imageNamed:@"5C.png"],
+            [UIImage imageNamed:@"5D.png"],
+            [UIImage imageNamed:@"5E.png"],
+            [UIImage imageNamed:@"5F.png"],
+            [UIImage imageNamed:@"5G.png"],
+            [UIImage imageNamed:@"5H.png"],
+            [UIImage imageNamed:@"5I.png"],
+            [UIImage imageNamed:@"5J.png"],
+            [UIImage imageNamed:@"5K.png"],
+            [UIImage imageNamed:@"5L.png"],
+            [UIImage imageNamed:@"5M.png"],
+            nil];
+    [self.newsImage setAnimationRepeatCount: -1];
+    self.newsImage.animationDuration = 1;
+    [self.newsImage startAnimating];
+    
+    
+    self.sportsImage.animationImages = [NSArray arrayWithObjects:
+            [UIImage imageNamed:@"1A.png"],
+            [UIImage imageNamed:@"1B.png"],
+            [UIImage imageNamed:@"1C.png"],
+            [UIImage imageNamed:@"1D.png"],
+            [UIImage imageNamed:@"1E.png"],
+            [UIImage imageNamed:@"1F.png"],
+            [UIImage imageNamed:@"1G.png"],
+            [UIImage imageNamed:@"1H.png"],
+            nil];
+    [self.sportsImage setAnimationRepeatCount: -1];
+    self.sportsImage.animationDuration = .4;
+    [self.sportsImage startAnimating];
+    
+    
+    self.entertainmentImage.animationImages = [NSArray arrayWithObjects:
+            [UIImage imageNamed:@"2A.png"],
+            [UIImage imageNamed:@"2B.png"],
+            [UIImage imageNamed:@"2C.png"],
+            [UIImage imageNamed:@"2D.png"],
+            [UIImage imageNamed:@"2E.png"],
+            [UIImage imageNamed:@"2F.png"],
+            [UIImage imageNamed:@"2G.png"],
+            nil];
+    [self.entertainmentImage setAnimationRepeatCount: -1];
+    self.entertainmentImage.animationDuration = .3;
+    [self.entertainmentImage startAnimating];
+    
+    
+    self.comedyImage.animationImages = [NSArray arrayWithObjects:
+            [UIImage imageNamed:@"4A.png"],
+            [UIImage imageNamed:@"4B.png"],
+            [UIImage imageNamed:@"4C.png"],
+            [UIImage imageNamed:@"4D.png"],
+            [UIImage imageNamed:@"4E.png"],
+            [UIImage imageNamed:@"4F.png"],
+            [UIImage imageNamed:@"4G.png"],
+            [UIImage imageNamed:@"4H.png"],
+            [UIImage imageNamed:@"4I.png"],
+            nil];
+    [self.comedyImage setAnimationRepeatCount: -1];
+    self.comedyImage.animationDuration = .8;
+    [self.comedyImage startAnimating];
+    
+    
+    self.gamingImage.animationImages = [NSArray arrayWithObjects:
+            [UIImage imageNamed:@"3A.png"],
+            [UIImage imageNamed:@"3B.png"],
+            [UIImage imageNamed:@"3C.png"],
+            [UIImage imageNamed:@"3D.png"],
+            [UIImage imageNamed:@"3E.png"],
+            [UIImage imageNamed:@"3F.png"],
+            [UIImage imageNamed:@"3G.png"],
+            [UIImage imageNamed:@"3H.png"],
+            [UIImage imageNamed:@"3I.png"],
+            [UIImage imageNamed:@"3J.png"],
+            nil];
+    [self.gamingImage setAnimationRepeatCount: -1];
+    self.gamingImage.animationDuration = .3;
+    [self.gamingImage startAnimating];
+    
+    
+    
+    
     
     for (NSInteger i = 0; i < 10; i++){
         topicStates[i] = 0;
     }
+    
+    counter = 0;
     
     
     // EDIT VIEW DROPSHADOW HERE
@@ -117,20 +208,28 @@ NSInteger topicStates[10];
         {
             self.newsView.backgroundColor = [UIColor whiteColor];
             topicStates[0]=0;
+            counter = counter - 1;
+            
         } else {
             [self.newsView setBackgroundColor:RGBA(238, 238, 238, 1)];
             topicStates[0]=1;
+            counter = counter + 1;
+
         }
     }
     
     if (selectedTopic.tag == 1) {
         if (topicStates[1] == 1)
         {
-        self.sportsView.backgroundColor = [UIColor whiteColor];
+            self.sportsView.backgroundColor = [UIColor whiteColor];
             topicStates[1]=0;
+            counter = counter - 1;
+
         } else {
-         [self.sportsView setBackgroundColor:RGBA(238, 238, 238, 1)];
+            [self.sportsView setBackgroundColor:RGBA(238, 238, 238, 1)];
             topicStates[1]=1;
+            counter = counter + 1;
+
             }
     }
 
@@ -140,9 +239,13 @@ NSInteger topicStates[10];
         {
             self.entertainmentView.backgroundColor = [UIColor whiteColor];
             topicStates[2]=0;
+            counter = counter - 1;
+
         } else {
-         [self.entertainmentView setBackgroundColor:RGBA(238, 238, 238, 1)];
+            [self.entertainmentView setBackgroundColor:RGBA(238, 238, 238, 1)];
             topicStates[2]=1;
+            counter = counter + 1;
+
                 }
     }
 
@@ -151,9 +254,13 @@ NSInteger topicStates[10];
         {
             self.comedyView.backgroundColor = [UIColor whiteColor];
             topicStates[3]=0;
+            counter = counter - 1;
+
         } else {
         [self.comedyView setBackgroundColor:RGBA(238, 238, 238, 1)];
             topicStates[3]=1;
+            counter = counter + 1;
+
                 }
     }
 
@@ -162,11 +269,19 @@ NSInteger topicStates[10];
         {
             self.gamingView.backgroundColor = [UIColor whiteColor];
             topicStates[4]=0;
+            counter = counter - 1;
+
         } else {
            [self.gamingView setBackgroundColor:RGBA(238, 238, 238, 1)];
             topicStates[4]=1;
+            counter = counter + 1;
+
         }
     }
+    self.countLabel.text = [NSString stringWithFormat:@"%i",counter];
+    
+    NSLog(@"And here is my integer: %i", counter);
+    self.hideCount;
 }
 
 - (IBAction)onDoneButton:(UIButton *)sender {
@@ -183,4 +298,14 @@ NSInteger topicStates[10];
 
 }
 
+- (IBAction) hideCount {
+    if (counter == 0) {
+        
+        [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            self.selectedBarView.frame = CGRectMake(0, 570, 320, 505);
+        } completion:^(BOOL finished) {
+        }];
+    }
+}
+    
 @end

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+int counter;
+
 @interface topicViewController : UIViewController <UIGestureRecognizerDelegate>
 - (IBAction)onDoneButton:(UIButton *)sender;
 
