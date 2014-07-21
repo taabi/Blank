@@ -51,6 +51,8 @@ NSInteger topicStates[10];
 {
     [super viewDidLoad];
     
+    //remove this text
+    
     self.newsImage.animationImages = [NSArray arrayWithObjects:
             [UIImage imageNamed:@"5A.png"],
             [UIImage imageNamed:@"5B.png"],
