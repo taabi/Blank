@@ -6,12 +6,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="topicViewController">
             <connections>
+                <outlet property="comedyImage" destination="XVK-pu-AQG" id="FRs-KL-1Wb"/>
                 <outlet property="comedyView" destination="qm2-wo-Jpi" id="z2Z-Gi-V0r"/>
+                <outlet property="countLabel" destination="EGt-oo-t8w" id="6r9-Ve-PeC"/>
+                <outlet property="entertainmentImage" destination="5TX-L5-jdX" id="MhH-Vl-k5S"/>
                 <outlet property="entertainmentView" destination="A1l-G5-KTY" id="ffG-KH-nyr"/>
+                <outlet property="gamingImage" destination="b11-rF-mbc" id="X6e-wI-hDN"/>
                 <outlet property="gamingView" destination="nhK-VF-Kv8" id="Vqe-Ti-wFW"/>
+                <outlet property="newsImage" destination="4a0-Yv-HNU" id="QZU-ht-uLn"/>
                 <outlet property="newsView" destination="TgX-oj-4hK" id="Sod-iZ-CCz"/>
                 <outlet property="searchBar" destination="plR-qP-SkO" id="zK6-Of-Gel"/>
                 <outlet property="selectedBarView" destination="au7-2c-Mjn" id="sZM-JY-XVn"/>
+                <outlet property="sportsImage" destination="FxD-hO-CES" id="FOX-gn-lv0"/>
                 <outlet property="sportsView" destination="6Oz-Em-GKj" id="lYn-fg-uj6"/>
                 <outlet property="topicView" destination="Cue-Et-8rS" id="1bN-lh-gp8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
