@@ -278,7 +278,7 @@ NSInteger topicStates[10];
 
         }
     }
-    self.countLabel.text = [NSString stringWithFormat:@"%i",counter];
+    self.countLabel.text = [NSString stringWithFormat:@"%i Selected",counter];
     
     NSLog(@"And here is my integer: %i", counter);
     self.hideCount;
