@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface feedViewController : UIViewController
+@property (strong,nonatomic) NSArray *feedViewManager;
 
 @end
