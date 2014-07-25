@@ -47,15 +47,7 @@
     
     [super viewDidLoad];
 
-    //white status bar
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:NO];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
-    
-    //adding side menu
-//    UIViewController *sideMenu = self.viewManager[0];
-//    [self.topicViewHandler addSubview:sideMenu.view];
-//    
+
     //adding side menu
     UIViewController *sideMenu = self.viewManager[0];
     [self.topicViewHandler addSubview:sideMenu.view];
@@ -65,7 +57,7 @@
     
     //setting button radius
     self.getStarterOButton.layer.cornerRadius = 5;
-    self.whiteBoxView.layer.cornerRadius = 10;
+    //self.whiteBoxView.layer.cornerRadius = 10;
     
     //Views To animate from bottom
     self.whiteBoxView.frame = CGRectMake(0, 568, 320, 00);

@@ -9,6 +9,7 @@
 #import "topicViewController.h"
 #import "welcomeViewController.h"
 #import "feedViewController.h"
+#import "videoViewController.h"
 
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 
@@ -278,22 +279,19 @@ NSInteger topicStates[10];
 
         }
     }
-    self.countLabel.text = [NSString stringWithFormat:@"%i",counter];
+    self.countLabel.text = [NSString stringWithFormat:@"%i Selected",counter];
     
     NSLog(@"And here is my integer: %i", counter);
-    self.hideCount;
+    //self.hideCount;
 }
 
 - (IBAction)onDoneButton:(UIButton *)sender {
     NSLog(@"You're almost done!");
-    
-//  welcomeViewController *tempvc =[[welcomeViewController alloc]init];
-//   
-//   [tempvc showFeedView];
 
-    
+    videoViewController *vvc = [[videoViewController alloc]init];
     feedViewController *fvc =[[feedViewController alloc]init];
     fvc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    fvc.feedViewManager=@[self,vvc];
     [self presentViewController:fvc animated:YES completion:nil];
 
 }
