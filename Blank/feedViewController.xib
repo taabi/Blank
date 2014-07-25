@@ -27,7 +27,7 @@
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
-                        <imageView contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video feed" id="98C-0o-8rN">
+                        <imageView contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video-feed2" id="98C-0o-8rN">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
@@ -116,7 +116,11 @@
                     <rect key="frame" x="320" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <gestureRecognizers/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="UR6-ex-Dba" appends="YES" id="6mD-3e-75i"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" id="1nK-GU-yND">
                     <rect key="frame" x="320" y="0.0" width="320" height="568"/>
@@ -140,10 +144,15 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
+        <tapGestureRecognizer id="UR6-ex-Dba">
+            <connections>
+                <action selector="fakeDoneClick:" destination="-1" id="maR-PJ-Qm3"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="ic_chevron_left_wht_24dp" width="24" height="24"/>
         <image name="ic_list_wht_24dp" width="24" height="24"/>
-        <image name="video feed" width="320" height="1634"/>
+        <image name="video-feed2" width="320" height="1634"/>
     </resources>
 </document>
