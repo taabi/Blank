@@ -9,6 +9,7 @@
                 <outlet property="backButtonView" destination="rHV-Hi-tKS" id="qcF-45-Xa8"/>
                 <outlet property="fakeDone" destination="TEH-9T-W4p" id="58v-FO-dHd"/>
                 <outlet property="feedScrollView" destination="6mi-Oz-voc" id="KbK-hE-Czw"/>
+                <outlet property="firstView" destination="2Js-0I-w5z" id="Spr-tK-ade"/>
                 <outlet property="menuButton" destination="auy-jx-dec" id="tDt-ET-cP0"/>
                 <outlet property="navBarTitle" destination="1oi-0z-EO3" id="GHX-lw-cnD"/>
                 <outlet property="navBarView" destination="NZM-Kz-8Eh" id="N1k-uc-OJV"/>
@@ -71,6 +72,11 @@
                                 <action selector="fullScreenbutton:" destination="-1" eventType="touchUpInside" id="fbA-jJ-2dC"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" id="2Js-0I-w5z">
+                            <rect key="frame" x="9" y="8" width="301" height="171"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
                     </subviews>
                 </scrollView>
                 <view contentMode="scaleToFill" id="w7D-hH-Ywo">

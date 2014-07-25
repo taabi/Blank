@@ -8,8 +8,10 @@
 
 #import "feedViewController.h"
 #import "videoViewController.h"
-
 #import "topicViewController.h"
+#import "PBJVideoPlayerController.h"
+#import "PBJVideoView.h"
+#import "HCYoutubeParser.h"
 
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 
@@ -31,6 +33,14 @@
 @property (weak, nonatomic) IBOutlet UIView *transparentView;
 
 - (IBAction)fakeDoneClick:(id)sender;
+
+// video views outlets
+@property (nonatomic,strong) PBJVideoPlayerController *player;
+
+@property (weak, nonatomic) IBOutlet UIView *firstView;
+// End of outlets
+
+
 -(void) loadTopics;
 @end
 
