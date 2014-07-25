@@ -80,7 +80,11 @@
                     <rect key="frame" x="320" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <gestureRecognizers/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="Y6E-g6-B4f" appends="YES" id="q1T-EI-LSt"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" id="HI6-H9-I8U" userLabel="topicView">
                     <rect key="frame" x="330" y="0.0" width="320" height="568"/>
@@ -92,9 +96,6 @@
             <gestureRecognizers/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <connections>
-                <outletCollection property="gestureRecognizers" destination="Y6E-g6-B4f" appends="YES" id="3Is-RC-Ouw"/>
-            </connections>
         </view>
         <tapGestureRecognizer id="Y6E-g6-B4f" userLabel="Main View Tap">
             <connections>
