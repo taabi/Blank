@@ -1,0 +1,13 @@
+PODS:
+  - HCYoutubeParser (0.0.2)
+  - PBJVideoPlayer (0.1.6)
+
+DEPENDENCIES:
+  - HCYoutubeParser
+  - PBJVideoPlayer
+
+SPEC CHECKSUMS:
+  HCYoutubeParser: d82d0b0e181c090a94f8f119fb2141303bc96ecf
+  PBJVideoPlayer: 8630122121c609354f7503b6bdd9a9b0e8cae6a8
+
+COCOAPODS: 0.33.1
