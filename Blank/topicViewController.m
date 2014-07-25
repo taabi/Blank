@@ -14,7 +14,7 @@
 
 @interface topicViewController ()
 @property (weak, nonatomic) IBOutlet UIView *view;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UITextField *searchField;
 @property (weak, nonatomic) IBOutlet UIView *newsView;
 @property (weak, nonatomic) IBOutlet UIView *sportsView;
 @property (weak, nonatomic) IBOutlet UIView *entertainmentView;
@@ -28,10 +28,22 @@
 @property (weak, nonatomic) IBOutlet UIImageView *entertainmentImage;
 @property (weak, nonatomic) IBOutlet UIImageView *comedyImage;
 @property (weak, nonatomic) IBOutlet UIImageView *gamingImage;
+@property (weak, nonatomic) IBOutlet UIView *searchResultsView;
+@property (weak, nonatomic) IBOutlet UIScrollView *topicScrollView;
+@property (weak, nonatomic) IBOutlet UIView *searchRedditView;
+@property (weak, nonatomic) IBOutlet UIView *redditView;
+@property (weak, nonatomic) IBOutlet UIImageView *redditImage;
+@property (weak, nonatomic) IBOutlet UIImageView *searchRedditImage;
+@property (weak, nonatomic) IBOutlet UIView *sitesView;
 
 
+- (IBAction)onRedditSearch:(id)sender;
 - (IBAction)onTopicTap:(UITapGestureRecognizer *)sender;
 - (IBAction)hideCount;
+- (IBAction)textEdited;
+
+- (void)searchGood;
+- (void)searchBad;
 
 @end
 
@@ -52,7 +64,8 @@ NSInteger topicStates[10];
 {
     [super viewDidLoad];
     
-    //remove this text
+    self.topicScrollView.contentSize = CGSizeMake(320,600);
+    self.topicScrollView.contentOffset = CGPointMake(0,120);
     
     self.newsImage.animationImages = [NSArray arrayWithObjects:
             [UIImage imageNamed:@"5A.png"],
@@ -137,6 +150,40 @@ NSInteger topicStates[10];
     
     
     
+    self.redditImage.animationImages = [NSArray arrayWithObjects:
+                                        [UIImage imageNamed:@"3A.png"],
+                                        [UIImage imageNamed:@"3B.png"],
+                                        [UIImage imageNamed:@"3C.png"],
+                                        [UIImage imageNamed:@"3D.png"],
+                                        [UIImage imageNamed:@"3E.png"],
+                                        [UIImage imageNamed:@"3F.png"],
+                                        [UIImage imageNamed:@"3G.png"],
+                                        [UIImage imageNamed:@"3H.png"],
+                                        [UIImage imageNamed:@"3I.png"],
+                                        [UIImage imageNamed:@"3J.png"],
+                                        nil];
+    [self.redditImage setAnimationRepeatCount: -1];
+    self.redditImage.animationDuration = .3;
+    [self.redditImage startAnimating];
+    
+    self.searchRedditImage.animationImages = [NSArray arrayWithObjects:
+                                        [UIImage imageNamed:@"3A.png"],
+                                        [UIImage imageNamed:@"3B.png"],
+                                        [UIImage imageNamed:@"3C.png"],
+                                        [UIImage imageNamed:@"3D.png"],
+                                        [UIImage imageNamed:@"3E.png"],
+                                        [UIImage imageNamed:@"3F.png"],
+                                        [UIImage imageNamed:@"3G.png"],
+                                        [UIImage imageNamed:@"3H.png"],
+                                        [UIImage imageNamed:@"3I.png"],
+                                        [UIImage imageNamed:@"3J.png"],
+                                        nil];
+    [self.searchRedditImage setAnimationRepeatCount: -1];
+    self.searchRedditImage.animationDuration = .3;
+    [self.searchRedditImage startAnimating];
+    
+    
+    
     
     
     for (NSInteger i = 0; i < 10; i++){
@@ -155,12 +202,17 @@ NSInteger topicStates[10];
     self.view.layer.shadowOpacity = 0.5f;
     self.view.layer.shadowPath = shadowPath.CGPath;
     
-    // EDIT SEARCH BAR HERE
-    self.searchBar.layer.borderWidth = 0;
-    self.searchBar.layer.borderColor = [[UIColor clearColor] CGColor];
-    self.searchBar.backgroundColor = [UIColor blackColor];
-//    self.searchBar.barTintColor = [UIColor clearColor];
-//    [self.searchBar setOpaque:NO];
+    
+
+    
+    
+    
+    // EDIT SEARCH FIELD HERE
+    self.searchField.layer.borderWidth = 0;
+    self.searchField.layer.borderColor = [[UIColor clearColor] CGColor];
+//    self.searchField.backgroundColor = [[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.3] CGColor];
+
+    
     
     
     // SET PLACEMENT OF SELECTEDBAR TAB
@@ -173,11 +225,13 @@ NSInteger topicStates[10];
     // Dispose of any resources that can be recreated.
 }
 
+
     // HIDES KEYBOARD WHEN BG IS TAPPED
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self.searchBar resignFirstResponder];
+    [self.searchField resignFirstResponder];
 }
+
 
     // TAP ACTION   --- add a method 'whichTopic' to detect which topic is being tapped on or off.
 - (void)tapGestureDetected:(UITapGestureRecognizer *)recognizer {
@@ -192,6 +246,32 @@ NSInteger topicStates[10];
         NSLog(@"doh!");
         self.gamingView.backgroundColor = [UIColor blueColor];
     }
+}
+
+
+
+- (IBAction)onRedditSearch:(id)sender {
+    [UIView animateWithDuration:.1 animations:^{
+        self.searchResultsView.hidden = NO;
+        //            self.searchResultsView.alpha = 1;
+        self.searchResultsView.frame = CGRectMake(0, -30, 320, 90);
+    }];
+    self.sitesView.hidden = false;
+    self.sitesView.alpha = 1;
+    self.topicScrollView.scrollEnabled = true;
+    [self.view endEditing:YES];
+
+    
+    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.topicScrollView.contentOffset = CGPointMake(0, 0);
+        
+        // EDIT SEARCH RESULTS DROPSHADOW
+        self.searchResultsView.layer.shadowColor = [[UIColor clearColor] CGColor];
+        self.searchResultsView.layer.shadowOffset = CGSizeMake(0.0f,5.0f);
+        self.searchResultsView.layer.shadowOpacity = 0.0f;
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 - (IBAction)onTopicTap:(UITapGestureRecognizer *)sender {
@@ -280,6 +360,22 @@ NSInteger topicStates[10];
 
         }
     }
+    
+    if ( selectedTopic.tag == 5) {
+        if (topicStates[5] == 1)
+        {
+            self.redditView.backgroundColor = [UIColor whiteColor];
+            topicStates[5]=0;
+            counter = counter - 1;
+            
+        } else {
+            [self.redditView setBackgroundColor:RGBA(238, 238, 238, 1)];
+            topicStates[5]=1;
+            counter = counter + 1;
+            
+        }
+    }
+    
     self.countLabel.text = [NSString stringWithFormat:@"%i",counter];
     
     NSLog(@"And here is my integer: %i", counter);
@@ -309,5 +405,35 @@ NSInteger topicStates[10];
         }];
     }
 }
+
+- (IBAction)textEdited {
+    if ([self.searchField.text isEqual:@"reddit"]) {
+        NSLog(@"you found reddit");
+        
+        [UIView animateWithDuration:.3 animations:^{
+            self.searchResultsView.hidden = NO;
+//            self.searchResultsView.alpha = 1;
+            self.searchResultsView.frame = CGRectMake(0, 60, 320, 90);
+            
+            // EDIT SEARCH RESULTS DROPSHADOW
+            self.searchResultsView.layer.shadowColor = [[UIColor blackColor] CGColor];
+            self.searchResultsView.layer.shadowOffset = CGSizeMake(0.0f,2.0f);
+            self.searchResultsView.layer.shadowOpacity = 0.5f;
+        }];
+    } else {
+        [UIView animateWithDuration:.3 animations:^{
+            self.searchResultsView.hidden = NO;
+            //            self.searchResultsView.alpha = 1;
+            self.searchResultsView.frame = CGRectMake(0, -30, 320, 90);
+            
+            // EDIT SEARCH RESULTS DROPSHADOW
+            self.searchResultsView.layer.shadowColor = [[UIColor clearColor] CGColor];
+            self.searchResultsView.layer.shadowOffset = CGSizeMake(0.0f,5.0f);
+            self.searchResultsView.layer.shadowOpacity = 0.0f;
+        }];
+    }
+}
+
+
     
 @end
