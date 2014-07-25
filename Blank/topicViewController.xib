@@ -87,7 +87,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </view>
                                 <view contentMode="scaleToFill" id="ZaQ-EG-CSE">
-                                    <rect key="frame" x="0.0" y="114" width="320" height="388"/>
+                                    <rect key="frame" x="0.0" y="114" width="320" height="558"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" id="TgX-oj-4hK" userLabel="News View">
@@ -302,13 +302,6 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
-        <viewController id="9Dl-1g-Ltp">
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <nil key="simulatedTopBarMetrics"/>
-            <nil key="simulatedBottomBarMetrics"/>
-            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-        </viewController>
         <tapGestureRecognizer id="KGP-ke-RX8" userLabel="news tap">
             <connections>
                 <action selector="onTopicTap:" destination="-1" id="e7t-4Z-HVk"/>

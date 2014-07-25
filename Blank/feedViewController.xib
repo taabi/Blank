@@ -27,7 +27,7 @@
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
-                        <imageView contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video feed" id="98C-0o-8rN">
+                        <imageView contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video-feed2" id="98C-0o-8rN">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
@@ -144,6 +144,6 @@
     <resources>
         <image name="ic_chevron_left_wht_24dp" width="24" height="24"/>
         <image name="ic_list_wht_24dp" width="24" height="24"/>
-        <image name="video feed" width="320" height="1634"/>
+        <image name="video-feed2" width="320" height="1634"/>
     </resources>
 </document>

@@ -43,8 +43,7 @@
 - (IBAction)hideCount;
 - (IBAction)textEdited;
 
-- (void)searchGood;
-- (void)searchBad;
+
 
 @end
 
