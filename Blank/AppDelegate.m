@@ -26,7 +26,7 @@
 
     welcomeViewController *wvc = [[welcomeViewController alloc] init];
     
-    feedViewController *fvc = [[feedViewController alloc]init];
+    //feedViewController *fvc = [[feedViewController alloc]init];
     
     wvc.viewManager=@[tvc];
     self.window.rootViewController = wvc;
