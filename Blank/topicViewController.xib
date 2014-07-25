@@ -44,7 +44,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <view hidden="YES" contentMode="scaleToFill" id="IA4-uu-e17">
-                                    <rect key="frame" x="0.0" y="0.0" width="270" height="117"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="270" height="111"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" id="ceV-aT-kqm" userLabel="Sites View">
@@ -87,11 +87,11 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </view>
                                 <view contentMode="scaleToFill" id="ZaQ-EG-CSE">
-                                    <rect key="frame" x="0.0" y="114" width="320" height="558"/>
+                                    <rect key="frame" x="0.0" y="111" width="320" height="558"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" id="TgX-oj-4hK" userLabel="News View">
-                                            <rect key="frame" x="0.0" y="34" width="270" height="80"/>
+                                            <rect key="frame" x="320" y="31" width="270" height="80"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7HR-BQ-LlH">
@@ -114,7 +114,7 @@
                                             </connections>
                                         </view>
                                         <view tag="1" contentMode="scaleToFill" id="6Oz-Em-GKj" userLabel="Sports View">
-                                            <rect key="frame" x="0.0" y="115" width="270" height="80"/>
+                                            <rect key="frame" x="320" y="111" width="270" height="80"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VNG-bv-Kes">
@@ -137,7 +137,7 @@
                                             </connections>
                                         </view>
                                         <view tag="2" contentMode="scaleToFill" id="A1l-G5-KTY" userLabel="Entertainment View">
-                                            <rect key="frame" x="0.0" y="200" width="270" height="80"/>
+                                            <rect key="frame" x="320" y="191" width="270" height="80"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entertainment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a45-2w-v0u">
@@ -160,7 +160,7 @@
                                             </connections>
                                         </view>
                                         <view tag="3" contentMode="scaleToFill" id="qm2-wo-Jpi" userLabel="Comedy View">
-                                            <rect key="frame" x="0.0" y="281" width="270" height="80"/>
+                                            <rect key="frame" x="320" y="271" width="270" height="80"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comedy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DVd-iF-fHB">
@@ -183,7 +183,7 @@
                                             </connections>
                                         </view>
                                         <view tag="4" contentMode="scaleToFill" id="nhK-VF-Kv8" userLabel="Gaming View">
-                                            <rect key="frame" x="0.0" y="362" width="270" height="80"/>
+                                            <rect key="frame" x="320" y="351" width="270" height="80"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gaming" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vlh-84-AFr">
@@ -205,8 +205,8 @@
                                                 <outletCollection property="gestureRecognizers" destination="8mu-3p-rEM" appends="YES" id="a8g-9k-Ff9"/>
                                             </connections>
                                         </view>
-                                        <view contentMode="scaleToFill" id="en8-Tx-CDa">
-                                            <rect key="frame" x="0.0" y="3" width="270" height="31"/>
+                                        <view contentMode="scaleToFill" id="en8-Tx-CDa" userLabel="Topic View">
+                                            <rect key="frame" x="0.0" y="0.0" width="270" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rpa-nG-6ir">
@@ -224,7 +224,7 @@
                             </subviews>
                         </scrollView>
                         <view hidden="YES" contentMode="scaleToFill" id="F07-wk-yXZ" userLabel="searchRedditView">
-                            <rect key="frame" x="0.0" y="-20" width="270" height="88"/>
+                            <rect key="frame" x="0.0" y="-12.5" width="270" height="66"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reddit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fpZ-bx-fr2" userLabel="Label - Reddit">
@@ -309,27 +309,27 @@
         </tapGestureRecognizer>
         <tapGestureRecognizer id="ElI-qN-UqX" userLabel="sports tap">
             <connections>
-                <action selector="onTopicTap:" destination="-1" id="zEH-74-4D9"/>
+                <action selector="onTopicTap:" destination="-1" id="g1E-DF-UdA"/>
             </connections>
         </tapGestureRecognizer>
         <tapGestureRecognizer id="qQ6-sq-SG1" userLabel="entertainment tap">
             <connections>
-                <action selector="onTopicTap:" destination="-1" id="ag8-Ai-L1L"/>
+                <action selector="onTopicTap:" destination="-1" id="FYP-Lo-zof"/>
             </connections>
         </tapGestureRecognizer>
         <tapGestureRecognizer id="4a9-JG-FhP" userLabel="comedy tap">
             <connections>
-                <action selector="onTopicTap:" destination="-1" id="8w5-uE-42p"/>
+                <action selector="onTopicTap:" destination="-1" id="c9J-0A-vsT"/>
             </connections>
         </tapGestureRecognizer>
         <tapGestureRecognizer id="8mu-3p-rEM" userLabel="gaming tap">
             <connections>
-                <action selector="onTopicTap:" destination="-1" id="2HT-cp-KB8"/>
+                <action selector="onTopicTap:" destination="-1" id="hyi-iS-EG3"/>
             </connections>
         </tapGestureRecognizer>
         <tapGestureRecognizer id="Opn-P6-Wzy" userLabel="reddit tap">
             <connections>
-                <action selector="onTopicTap:" destination="-1" id="EDC-RE-UhS"/>
+                <action selector="onTopicTap:" destination="-1" id="JQh-0k-NZR"/>
             </connections>
         </tapGestureRecognizer>
     </objects>

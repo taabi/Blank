@@ -11,7 +11,9 @@
 int counter;
 
 @interface topicViewController : UIViewController <UIGestureRecognizerDelegate>
-- (IBAction)onDoneButton:(UIButton *)sender;
+- (IBAction) onDoneButton:(UIButton *)sender;
+- (void) greenView;
+- (void) animateList;
 
 //{
 //    UISearchBar *searchBar;
