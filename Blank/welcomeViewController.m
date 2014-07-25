@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *paraLabel;
 @property (strong, nonatomic) IBOutlet UIView *topicViewHandler;
 @property (weak, nonatomic) IBOutlet UIView *transparentView;
+
+@property (strong,nonatomic) topicViewController *tvc;
 - (IBAction)startButton:(id)sender;
 - (IBAction)onMainViewTap:(id)sender;
 
@@ -49,10 +51,11 @@
 
 
     //adding side menu
-    UIViewController *sideMenu = self.viewManager[0];
-    [self.topicViewHandler addSubview:sideMenu.view];
-    [self addChildViewController:sideMenu];
-    [sideMenu didMoveToParentViewController:self];
+    topicViewController *sideMenu = self.viewManager[0];
+    self.tvc=sideMenu;
+    [self.topicViewHandler addSubview:self.tvc.view];
+    [self addChildViewController:self.tvc];
+    [self.tvc didMoveToParentViewController:self];
  
     
     //setting button radius
@@ -135,6 +138,7 @@
         self.transparentView.alpha = 0.8;
         ;
     }];
+    [self.tvc animateList];
 
 }
 
