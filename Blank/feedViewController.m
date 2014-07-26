@@ -85,10 +85,6 @@
         
         [self.navBarView setBackgroundColor:RGBA(33,33,33,1)];
     }];
-    
-    
-    
-    
 }
 - (IBAction)backButton:(id)sender {
     self.videoView.center = CGPointMake(500, 316);
