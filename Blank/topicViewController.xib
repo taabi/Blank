@@ -40,7 +40,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" id="vM5-I6-plV">
-                            <rect key="frame" x="0.0" y="60" width="320" height="505"/>
+                            <rect key="frame" x="0.0" y="60" width="270" height="505"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <view hidden="YES" contentMode="scaleToFill" id="IA4-uu-e17">

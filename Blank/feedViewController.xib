@@ -75,7 +75,7 @@
                         <view contentMode="scaleToFill" id="2Js-0I-w5z">
                             <rect key="frame" x="9" y="8" width="301" height="171"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
                 </scrollView>
@@ -122,7 +122,11 @@
                     <rect key="frame" x="320" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <gestureRecognizers/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="m2f-Pf-t1F" appends="YES" id="wfT-AM-KtH"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" id="1nK-GU-yND">
                     <rect key="frame" x="320" y="0.0" width="320" height="568"/>
@@ -146,6 +150,11 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
+        <tapGestureRecognizer id="m2f-Pf-t1F">
+            <connections>
+                <action selector="fakeDoneClick:" destination="-1" id="rrF-Ac-Bgd"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="ic_chevron_left_wht_24dp" width="24" height="24"/>

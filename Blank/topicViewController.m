@@ -64,7 +64,7 @@ NSInteger topicStates[10];
 {
     [super viewDidLoad];
     
-    self.topicScrollView.contentSize = CGSizeMake(320,600);
+    self.topicScrollView.contentSize = CGSizeMake(270,600);
     self.topicScrollView.contentOffset = CGPointMake(0,114);
     
     self.newsImage.animationImages = [NSArray arrayWithObjects:
@@ -382,7 +382,7 @@ NSInteger topicStates[10];
 
     
     NSLog(@"And here is my integer: %i", counter);
-    self.hideCount;
+    //self.hideCount;
 }
 
 - (IBAction)onDoneButton:(UIButton *)sender {
@@ -445,27 +445,27 @@ NSInteger topicStates[10];
 
 
 - (void) animateList {
-    [UIView animateWithDuration:.3 delay:0 options:0 animations:^{
+    [UIView animateWithDuration:.2 delay:0 options:0 animations:^{
         self.newsView.center = CGPointMake(135, 71);
     } completion:^(BOOL finished) {
     }];
     
-    [UIView animateWithDuration:.4 delay:0.1 options:0 animations:^{
+    [UIView animateWithDuration:.2 delay:0.1 options:0 animations:^{
         self.sportsView.center = CGPointMake(135, 151);
     } completion:^(BOOL finished) {
     }];
     
-    [UIView animateWithDuration:.475 delay:0.2 options:0 animations:^{
+    [UIView animateWithDuration:.3 delay:0.2 options:0 animations:^{
         self.entertainmentView.center = CGPointMake(135, 231);
     } completion:^(BOOL finished) {
     }];
     
-    [UIView animateWithDuration:.55 delay:0.3 options:0 animations:^{
+    [UIView animateWithDuration:.45 delay:0.3 options:0 animations:^{
         self.comedyView.center = CGPointMake(135, 311);
     } completion:^(BOOL finished) {
     }];
     
-    [UIView animateWithDuration:.7 delay:0.3 options:0 animations:^{
+    [UIView animateWithDuration:.5 delay:0.3 options:0 animations:^{
         self.gamingView.center = CGPointMake(135, 391);
     } completion:^(BOOL finished) {
     }];

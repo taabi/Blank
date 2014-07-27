@@ -35,16 +35,18 @@
 - (IBAction)fakeDoneClick:(id)sender;
 
 // video views outlets
-@property (nonatomic,strong) PBJVideoPlayerController *player;
-
 @property (weak, nonatomic) IBOutlet UIView *firstView;
 // End of outlets
 
 
 -(void) loadTopics;
+-(void) loadVideos;
 @end
 
 @implementation feedViewController
+
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,6 +61,7 @@
 {
     [super viewDidLoad];
     
+    
     videoViewController *tempvvc = self.feedViewManager[1];
     self.vvc = tempvvc;
     
@@ -72,6 +75,8 @@
     
     
     [self loadTopics];
+    [self loadVideos];
+    
 
 }
 
@@ -87,11 +92,17 @@
     [self.videoView addSubview:self.vvc.view];
     
     [self.vvc startAnimate];
+    self.backButtonView.center= CGPointMake(30,50);
+    self.backButtonView.alpha=0;
+    
     [UIView animateWithDuration:0.3 animations:^{
         self.navBarTitle.alpha=0.2;
         self.menuButton.alpha=0.2;
         self.menuButton.hidden=TRUE;
+        self.backButtonView.center= CGPointMake(30,37);
         self.backButtonView.hidden=FALSE;
+        self.backButtonView.alpha=1;
+        
         
         [self.navBarView setBackgroundColor:RGBA(33,33,33,1)];
     }];
@@ -103,11 +114,15 @@
 - (IBAction)backButton:(id)sender {
     self.videoView.center = CGPointMake(500, 316);
     
+    self.menuButton.center= CGPointMake(295,50);
+    self.menuButton.alpha=0;
+    
     [UIView animateWithDuration:0.3 animations:^{
         self.navBarTitle.alpha=1;
         self.menuButton.alpha=1;
         self.menuButton.hidden=FALSE;
         self.backButtonView.hidden=TRUE;
+        self.menuButton.center= CGPointMake(295,37);
         
         [self.navBarView setBackgroundColor:RGBA(239,78,54,1)];
     }];
@@ -176,5 +191,30 @@
     
 
 
+}
+-(void) loadVideos{
+    
+    //loading videos - need to change this into array
+    
+    self.player1 = [[PBJVideoPlayerController alloc] init];
+    self.player1.view.frame = CGRectMake(0, 180, 320, 180);
+    self.player1.view.backgroundColor = [UIColor yellowColor];
+    
+    self.player2 = [[PBJVideoPlayerController alloc] init];
+    self.player2.view.frame = CGRectMake(0, 180, 320, 180);
+    
+    self.player3 = [[PBJVideoPlayerController alloc] init];
+    self.player3.view.frame = CGRectMake(0, 180, 320, 180);
+    
+    self.player4 = [[PBJVideoPlayerController alloc] init];
+    self.player4.view.frame = CGRectMake(0, 180, 320, 180);
+    
+    self.player5 = [[PBJVideoPlayerController alloc] init];
+    self.player5.view.frame = CGRectMake(0, 180, 320, 180);
+    
+    [self.firstView addSubview:self.player1.view];
+    
+    NSLog(@"video frames loaded");
+    
 }
 @end
