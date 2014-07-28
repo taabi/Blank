@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PBJVideoPlayerController.h"
 
-@interface feedViewController : UIViewController
+@interface feedViewController : UIViewController <UIScrollViewDelegate>
 @property (strong,nonatomic) NSArray *feedViewManager;
 
 @property (nonatomic,strong) PBJVideoPlayerController *player1;

@@ -10,6 +10,7 @@
                 <outlet property="fakeDone" destination="TEH-9T-W4p" id="58v-FO-dHd"/>
                 <outlet property="feedScrollView" destination="6mi-Oz-voc" id="KbK-hE-Czw"/>
                 <outlet property="firstView" destination="2Js-0I-w5z" id="Spr-tK-ade"/>
+                <outlet property="loader" destination="yXd-VT-aTs" id="Lx6-O7-woh"/>
                 <outlet property="menuButton" destination="auy-jx-dec" id="tDt-ET-cP0"/>
                 <outlet property="navBarTitle" destination="1oi-0z-EO3" id="GHX-lw-cnD"/>
                 <outlet property="navBarView" destination="NZM-Kz-8Eh" id="N1k-uc-OJV"/>
@@ -163,6 +164,11 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="yXd-VT-aTs">
+                    <rect key="frame" x="150" y="274" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="color" red="1" green="0.37682481750000002" blue="0.27984770949999999" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

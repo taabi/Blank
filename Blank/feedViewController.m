@@ -25,6 +25,7 @@
 - (IBAction)backButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *backButtonView;
 - (IBAction)menuClick:(id)sender;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loader;
 
 @property (weak, nonatomic) IBOutlet UIView *topicHandler;
 @property (strong,nonatomic) videoViewController *vvc;
@@ -74,6 +75,8 @@ float videoNumber;
     self.tvc = temptvc;
     
     // Do any additional setup after loading the view from its nib.
+    
+    self.feedScrollView.delegate=self;
 
     self.feedScrollView.contentSize = CGSizeMake(320,1600);
     self.videoView.center = CGPointMake(500, 316);
@@ -149,6 +152,7 @@ float videoNumber;
 
 - (IBAction)fakeDoneClick:(id)sender {
     
+    
     [UIView
      animateWithDuration:0.3
      delay:0
@@ -165,8 +169,25 @@ float videoNumber;
     [UIView animateWithDuration:.3 animations:^{
         self.transparentView.alpha = 0.0;
         ;
+        self.feedScrollView.alpha=0;
     }];
+    
+    [self.loader startAnimating];
+    
+    [self performSelector:@selector(showTempfeed) withObject:nil afterDelay:1];
+    
+    
 
+}
+
+-(void) showTempfeed{
+    
+    [UIView animateWithDuration:.3 animations:^{
+        self.feedScrollView.alpha=1;
+    }];
+    [self.loader stopAnimating];
+    
+    
 }
 
 - (IBAction)test:(UIButton *)sender {
@@ -186,6 +207,10 @@ float videoNumber;
     
 }
 - (IBAction)menuClick:(id)sender {
+    
+    [self.player1 pause];
+    [self.player2 pause];
+    [self.player3 pause];
     
     // Show Black background
     self.transparentView.alpha = 0;
@@ -251,7 +276,7 @@ float videoNumber;
     
     //second Video
     
-    NSURL *url1 = [NSURL URLWithString:@"hhttp://youtu.be/ihx0XWhkvmQ"];
+    NSURL *url1 = [NSURL URLWithString:@"http://youtu.be/C8nEN_Ae8Cc"];
     NSDictionary *videos1 = [HCYoutubeParser h264videosWithYoutubeURL:url1];
     
     //NSString *hdUrl = videos[@"hd720"];
@@ -261,7 +286,7 @@ float videoNumber;
     
     
     // third video
-    NSURL *url2 = [NSURL URLWithString:@"http://youtu.be/C8nEN_Ae8Cc"];
+    NSURL *url2 = [NSURL URLWithString:@"http://youtu.be/ihx0XWhkvmQ"];
     NSDictionary *videos2 = [HCYoutubeParser h264videosWithYoutubeURL:url2];
     
     //NSString *hdUrl = videos[@"hd720"];
@@ -300,6 +325,36 @@ float videoNumber;
     }];
 
     
+    
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // Pause the video
+    NSLog(@"scrolling");
+    
+    if(self.feedScrollView.contentOffset.y < 115){
+        [self.player1 playFromCurrentTime];
+        [self.player2 pause];
+    }
+    else if (self.feedScrollView.contentOffset.y > 115 && self.feedScrollView.contentOffset.y<320){
+        [self.player2 playFromCurrentTime];
+        [self.player1 pause];
+        [self.player3 pause];
+    }
+    else if(self.feedScrollView.contentOffset.y > 320 && self.feedScrollView.contentOffset.y <620){
+        
+        [self.player3 playFromCurrentTime];
+        [self.player2 pause];
+        
+    }
+    else{
+        [self.player1 pause];
+        [self.player2 pause];
+        [self.player3 pause];
+        
+    }
+
+    NSLog(@"offset: %f",self.feedScrollView.contentOffset.y);
     
 }
 @end
