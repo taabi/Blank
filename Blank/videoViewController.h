@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PBJVideoPlayerController.h"
 
 @interface videoViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *videoInfoView;
+@property (weak, nonatomic) IBOutlet UIView *videoView;
 
 - (void) startAnimate;
 - (void) returnAnimate;

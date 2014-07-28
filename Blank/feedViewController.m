@@ -17,7 +17,7 @@
 
 @interface feedViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *feedScrollView;
-- (IBAction)fullScreenbutton:(id)sender;
+- (IBAction)fullScreenbutton:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIView *videoView;
 @property (weak, nonatomic) IBOutlet UIView *navBarView;
 @property (weak, nonatomic) IBOutlet UILabel *navBarTitle;
@@ -41,14 +41,17 @@
 // End of outlets
 
 
+
 -(void) loadTopics;
 -(void) loadVideos;
+-(void) loadFullscreenVideo;
+
 @end
 
 @implementation feedViewController
 
 
-
+float videoNumber;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -72,7 +75,7 @@
     
     // Do any additional setup after loading the view from its nib.
 
-    self.feedScrollView.contentSize = CGSizeMake(320,1200);
+    self.feedScrollView.contentSize = CGSizeMake(320,1600);
     self.videoView.center = CGPointMake(500, 316);
     
     
@@ -88,12 +91,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)fullScreenbutton:(id)sender {
+- (IBAction)fullScreenbutton:(UIButton *)sender {
     [self.player1 pause];
     [self.player2 pause];
     [self.player3 pause];
     [self.player4 pause];
     [self.player5 pause];
+    //UIView *selectedVideo = sender.tag;
     
     self.videoView.center = CGPointMake(160, 316);
     [self.videoView addSubview:self.vvc.view];
@@ -113,8 +117,16 @@
         
         [self.navBarView setBackgroundColor:RGBA(33,33,33,1)];
     }];
+    
+    //getting which video to play
+     NSLog(@"tag: %d",sender.tag);
+    videoNumber = sender.tag;
+    
+    [self loadFullscreenVideo];
+
 }
 - (IBAction)backButton:(id)sender {
+    [self.fullPlayer pause];
     self.videoView.center = CGPointMake(500, 316);
     
     self.menuButton.center= CGPointMake(295,50);
@@ -133,6 +145,7 @@
     [self.vvc returnAnimate];
     
 }
+
 
 - (IBAction)fakeDoneClick:(id)sender {
     
@@ -154,6 +167,9 @@
         ;
     }];
 
+}
+
+- (IBAction)test:(UIButton *)sender {
 }
 
 -(void) loadTopics{
@@ -195,6 +211,8 @@
 
 
 }
+
+
 -(void) loadVideos{
     
     //loading videos - need to change this into array
@@ -203,7 +221,7 @@
     self.player1.view.frame = CGRectMake(0, 0, 301, 171);
     
     self.player2 = [[PBJVideoPlayerController alloc] init];
-    self.player2.view.frame = CGRectMake(0, 0, 300, 170);
+    self.player2.view.frame = CGRectMake(0, 0, 300,170);
 
     self.player3 = [[PBJVideoPlayerController alloc] init];
     self.player3.view.frame = CGRectMake(0, 0, 300, 170);
@@ -217,6 +235,8 @@
     [self.firstView addSubview:self.player1.view];
     [self.secondView addSubview:self.player2.view];
     [self.thirdView addSubview:self.player3.view];
+    
+    
     
     //first Video
     
@@ -240,7 +260,7 @@
     self.player2.videoPath = mediumUrl1;
     
     
-    
+    // third video
     NSURL *url2 = [NSURL URLWithString:@"http://youtu.be/C8nEN_Ae8Cc"];
     NSDictionary *videos2 = [HCYoutubeParser h264videosWithYoutubeURL:url2];
     
@@ -251,6 +271,35 @@
     
     
     NSLog(@"video frames loaded");
+    
+}
+
+-(void) loadFullscreenVideo{
+    
+    self.fullPlayer = [[PBJVideoPlayerController alloc] init];
+    self.fullPlayer.view.frame = CGRectMake(10, 10, 300, 170);
+    
+    if(videoNumber==1){
+        self.fullPlayer.videoPath = self.player1.videoPath;}
+    if(videoNumber==2){
+        self.fullPlayer.videoPath = self.player2.videoPath;}
+    if(videoNumber==3){
+        self.fullPlayer.videoPath = self.player3.videoPath;}
+    
+    [self.vvc.videoView addSubview:self.fullPlayer.view];
+    [self.fullPlayer playFromCurrentTime];
+    
+    
+    [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        
+        self.fullPlayer.view.frame = CGRectMake(0, 0, 320, 180);
+
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+
+    
     
 }
 @end

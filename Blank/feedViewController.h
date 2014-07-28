@@ -17,5 +17,6 @@
 @property (nonatomic,strong) PBJVideoPlayerController *player3;
 @property (nonatomic,strong) PBJVideoPlayerController *player4;
 @property (nonatomic,strong) PBJVideoPlayerController *player5;
+@property (nonatomic,strong) PBJVideoPlayerController *fullPlayer;
 
 @end
