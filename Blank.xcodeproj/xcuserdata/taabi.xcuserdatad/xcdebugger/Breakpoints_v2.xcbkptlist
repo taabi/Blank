@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blank/videoViewController.m"
-            timestampString = "427773078.510755"
+            timestampString = "428217478.078781"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "-startAnimate"
             landmarkType = "5">
          </BreakpointContent>

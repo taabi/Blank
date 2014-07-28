@@ -36,6 +36,8 @@
 
 // video views outlets
 @property (weak, nonatomic) IBOutlet UIView *firstView;
+@property (weak, nonatomic) IBOutlet UIView *secondView;
+@property (weak, nonatomic) IBOutlet UIView *thirdView;
 // End of outlets
 
 
@@ -87,6 +89,11 @@
 }
 
 - (IBAction)fullScreenbutton:(id)sender {
+    [self.player1 pause];
+    [self.player2 pause];
+    [self.player3 pause];
+    [self.player4 pause];
+    [self.player5 pause];
     
     self.videoView.center = CGPointMake(160, 316);
     [self.videoView addSubview:self.vvc.view];
@@ -193,22 +200,55 @@
     //loading videos - need to change this into array
     
     self.player1 = [[PBJVideoPlayerController alloc] init];
-    self.player1.view.frame = CGRectMake(0, 180, 320, 180);
-    self.player1.view.backgroundColor = [UIColor yellowColor];
+    self.player1.view.frame = CGRectMake(0, 0, 301, 171);
     
     self.player2 = [[PBJVideoPlayerController alloc] init];
-    self.player2.view.frame = CGRectMake(0, 180, 320, 180);
-    
+    self.player2.view.frame = CGRectMake(0, 0, 300, 170);
+
     self.player3 = [[PBJVideoPlayerController alloc] init];
-    self.player3.view.frame = CGRectMake(0, 180, 320, 180);
+    self.player3.view.frame = CGRectMake(0, 0, 300, 170);
     
     self.player4 = [[PBJVideoPlayerController alloc] init];
-    self.player4.view.frame = CGRectMake(0, 180, 320, 180);
+    self.player4.view.frame = CGRectMake(0, 0, 300, 170);
     
     self.player5 = [[PBJVideoPlayerController alloc] init];
-    self.player5.view.frame = CGRectMake(0, 180, 320, 180);
+    self.player5.view.frame = CGRectMake(0, 0, 300, 170);
     
     [self.firstView addSubview:self.player1.view];
+    [self.secondView addSubview:self.player2.view];
+    [self.thirdView addSubview:self.player3.view];
+    
+    //first Video
+    
+    NSURL *url = [NSURL URLWithString:@"http://youtu.be/xxYjJ341_Fg"];
+    NSDictionary *videos = [HCYoutubeParser h264videosWithYoutubeURL:url];
+    
+    //NSString *hdUrl = videos[@"hd720"];
+    NSString *mediumUrl = videos[@"medium"];
+    
+    self.player1.videoPath = mediumUrl;
+    [self.player1 playFromBeginning];
+    
+    //second Video
+    
+    NSURL *url1 = [NSURL URLWithString:@"hhttp://youtu.be/ihx0XWhkvmQ"];
+    NSDictionary *videos1 = [HCYoutubeParser h264videosWithYoutubeURL:url1];
+    
+    //NSString *hdUrl = videos[@"hd720"];
+    NSString *mediumUrl1 = videos1[@"medium"];
+    
+    self.player2.videoPath = mediumUrl1;
+    
+    
+    
+    NSURL *url2 = [NSURL URLWithString:@"http://youtu.be/C8nEN_Ae8Cc"];
+    NSDictionary *videos2 = [HCYoutubeParser h264videosWithYoutubeURL:url2];
+    
+    //NSString *hdUrl = videos[@"hd720"];
+    NSString *mediumUrl2 = videos2[@"medium"];
+    
+    self.player3.videoPath = mediumUrl2;
+    
     
     NSLog(@"video frames loaded");
     

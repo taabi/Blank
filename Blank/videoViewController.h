@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface videoViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *videoInfoView;
 
 - (void) startAnimate;
 - (void) returnAnimate;

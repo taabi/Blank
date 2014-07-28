@@ -13,6 +13,8 @@
                 <outlet property="menuButton" destination="auy-jx-dec" id="tDt-ET-cP0"/>
                 <outlet property="navBarTitle" destination="1oi-0z-EO3" id="GHX-lw-cnD"/>
                 <outlet property="navBarView" destination="NZM-Kz-8Eh" id="N1k-uc-OJV"/>
+                <outlet property="secondView" destination="mrC-mF-zQM" id="InI-FB-f7J"/>
+                <outlet property="thirdView" destination="Lt2-tM-sIl" id="mYD-RV-ZEO"/>
                 <outlet property="topicHandler" destination="1nK-GU-yND" id="tBf-7n-Edn"/>
                 <outlet property="transparentView" destination="OxE-Rd-7rd" id="BWY-P3-GJO"/>
                 <outlet property="videoView" destination="w7D-hH-Ywo" id="hqg-GJ-ufx"/>
@@ -72,8 +74,18 @@
                                 <action selector="fullScreenbutton:" destination="-1" eventType="touchUpInside" id="fbA-jJ-2dC"/>
                             </connections>
                         </button>
-                        <view contentMode="scaleToFill" id="2Js-0I-w5z">
+                        <view contentMode="scaleToFill" id="2Js-0I-w5z" userLabel="firstView">
                             <rect key="frame" x="9" y="8" width="301" height="171"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="mrC-mF-zQM" userLabel="secondView">
+                            <rect key="frame" x="9.5" y="278.5" width="301" height="171"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="Lt2-tM-sIl" userLabel="thirdView">
+                            <rect key="frame" x="9.5" y="548.5" width="301" height="171"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
