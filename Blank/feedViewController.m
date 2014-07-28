@@ -181,6 +181,7 @@ float videoNumber;
 }
 
 -(void) showTempfeed{
+    self.feedScrollView.contentOffset=CGPointMake(0,0);
     
     [UIView animateWithDuration:.3 animations:^{
         self.feedScrollView.alpha=1;
