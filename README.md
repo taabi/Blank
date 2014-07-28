@@ -1,6 +1,9 @@
 Hour Log:<br>
-Tabish-26 hours <br>
-Shaun-9.5 hours
+Tabish-30 hours <br>
+Shaun-18 hours
 
 
 Last Commit: Tabish was here!
+
+
+![animated gif](https://github.com/taabi/Blank/blob/master/demo.gif)
